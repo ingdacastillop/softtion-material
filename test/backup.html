@@ -1,0 +1,1009 @@
+
+<!-- STEPPER HORIZONTAL -->
+<div class="stepper-horizontal alternative">
+    <ul>
+        <li class="success" ng-click="openSnackbar()">
+            <div class="content">
+                <div class="indicator">
+                    <span>1</span>
+                </div>
+                <div class="description">
+                    <p class="title">Select campaign</p>
+                    <p class="optional">Text optional</p>
+                </div>
+            </div>
+        </li>
+        <li class="disabled">
+            <div class="content">
+                <div class="indicator">
+                    <span>2</span>
+                </div>
+                <div class="description">
+                    <p class="title">Create an ad group</p>
+                    <p class="optional">Text optional</p>
+                </div>
+            </div>
+        </li>
+        <li class="active">
+            <div class="content">
+                <div class="indicator">
+                    <span>3</span>
+                </div>
+                <div class="description">
+                    <p class="title">Select an app</p>
+                </div>
+            </div>
+        </li>
+        <li class="error">
+            <div class="content">
+                <div class="indicator">
+                    <span>4</span>
+                </div>
+                <div class="description">
+                    <p class="title">Create an ad</p>
+                    <p class="optional">Text optional</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+            
+<!-- EXPANSION PANELS -->
+<ul class="list flat">
+    <li class="expansion-panel">
+        <div class="header">
+            <div class="subtitle">
+                League of legends
+            </div>
+            <div class="detail">
+                <div class="content">
+                    <div class="title">Rumble</div>
+                    <div class="subtitle">Skin: super galáctico</div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="content">
+                Incluso entre los yordles, Rumble era el más pequeño de todos. Como tal, siempre sufría el acoso de los demás. Para sobrevivir, tenía que ser más ingenioso y astuto que el resto. Desarrolló muy mal temperamento y se ganó la reputación de estar siempre buscando camorra. Esto lo convirtió en un solitario, pero le daba igual. 
+            </div>
+            <div class="actions">
+                <button class="flat theme-primary">Flat</button>
+                <button class="raised right theme-primary" tooltip="Sasuke Uchiha">Raised</button>
+                <button class="action"><i>person</i></button>
+            </div>
+        </div>
+    </li>
+    <li class="expansion-panel">
+        <div class="header">
+            <div class="subtitle">
+                League of legends
+            </div>
+            <div class="detail">
+                <div class="content">
+                    <div class="title">Rumble</div>
+                    <div class="subtitle">Skin: super galáctico</div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="content">
+                Incluso entre los yordles, Rumble era el más pequeño de todos. Como tal, siempre sufría el acoso de los demás. Para sobrevivir, tenía que ser más ingenioso y astuto que el resto. Desarrolló muy mal temperamento y se ganó la reputación de estar siempre buscando camorra. Esto lo convirtió en un solitario, pero le daba igual. 
+            </div>
+            <div class="actions">
+                <button class="flat theme-primary">Flat</button>
+                <button class="raised right theme-primary" tooltip="Sasuke Uchiha">Raised</button>
+                <button class="action"><i>person</i></button>
+            </div>
+        </div>
+    </li>
+</ul>
+                    
+<!-- FOOTER BUTTONS -->
+<div class="footer-buttons">
+    <button class="flat theme-secondary">Share</button>
+    <button class="flat theme-primary">Confirm</button>
+</div>
+                
+<!-- STEPPER MOBILE -->
+<div class="stepper-mobile start">
+    <div class="back">
+        <button><span>Atrás</span></button>
+    </div>
+    <div class="next">
+        <button><span>Siguiente</span></button>
+    </div>
+
+    <div class="content">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot error"></div>
+            <div class="dot"></div>
+            <div class="dot disabled"></div>
+        </div>
+    </div>
+</div>
+          
+<!-- FAB MENU -->
+<div class="fab-menu" icon="add" options="scope.options"></div>
+
+<!-- PROGRESS BUTTON FLOATING -->
+<div class="progress-button-floating" ng-disabled="false" icon-button="cloud_down"></div>
+
+<!-- MENU -->
+<ul class="menu">
+    <li class="option">
+        <i>delete</i>
+        <span>Move to trash</span>
+        <i>done</i>
+    </li>
+    <li class="divider"></li>
+    <li class="option align-icon">
+        <span>Move to trash</span>
+        <i>done</i>
+    </li>
+</ul>
+
+<!-- AVATAR -->
+<div class="avatar"><span>S</span></div>
+<div class="avatar"><i>person</i></div>
+<div class="avatar"><img src="backup.png"></div>
+
+<!-- CALENDAR -->
+<div class="calendar" 
+     move-event="removeEvent($eventCalendar)"
+     remove-event="removeEvent($eventCalendar)"
+     edit-event="editEvent($event)"
+     disabled-date="disabledDate($date)"
+     min-date="minDate" max-date="maxDate"
+     ng-model="events" 
+     disabled-move="false"></div>
+
+<!-- GRID LIST -->
+<div class="grid-list">
+    <div class="subheader">
+        <span>Subheader de prueba</span>
+        <div class="switch" ng-model="switch"></div> 
+    </div>
+    <div class="grid" columns="3">
+        <div class="cell actionable">
+            <div class="background">
+                <img src="4.png" alt=""/>
+            </div>
+            <div class="content">
+                <span>100</span>
+                <div class="detail">
+                    <div class="content">
+                        <div class="title">Alistar</div>
+                        <div class="subtitle">El minotauro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="background">
+                <img src="26.png" alt=""/>
+            </div>
+            <div class="content">
+                <div class="detail">
+                    <div class="content">
+                        <div class="title">Alistar</div>
+                        <div class="subtitle">El minotauro</div>
+                    </div>
+                </div>
+                <span class="align-right">100</span>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="background">
+                <img src="5.png" alt=""/>
+            </div>
+            <div class="content">
+                <button class="action"><i>star_border</i></button>
+                <div class="detail">
+                    <div class="content">
+                        <div class="title">Amumu</div>
+                        <div class="subtitle"><i>mail</i>La momia triste</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="background">
+                <img src="Vi.png" alt=""/>
+            </div>
+            <div class="content">
+                <div class="detail">
+                    <div class="content">
+                        <div class="title">Vi</div>
+                    </div>
+                </div>
+                <button class="action"><i>star</i></button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- FAB SPEEDIAL -->
+<div class="fab-speed-dial">
+    <button class="floating"><i>person</i></button>
+    <ul>
+        <li><button class="floating"><i>edit</i></button></li>
+        <li><button class="floating"><i>more</i></button></li>
+        <li><button class="floating"><i>add</i></button></li>
+    </ul>
+</div>
+
+<!-- FAB DIALOG -->
+<div class="fab-dialog theme-primary" 
+     icon="add" ng-disabled="disabled"
+     ng-open="open" ng-close="close">
+    <div class="box">
+        <div class="content">
+            <!-- CONTENIDO -->
+        </div>
+    </div>
+</div>
+
+<!-- FORM -->
+<div class="form">
+    <div class="header">
+        <div class="nav-icon">
+            <button class="action"><i>arrow_back</i></button>
+        </div>
+        
+        <label class="title theme-secondary">Nuevo componente: Form</label>
+        <label class="subtitle">Componente creado para mejorar el Framework</label>
+    </div>
+
+    <div class="content">
+        <div class="textfield small-50 flex-pd-right" label="Nombres" ng-model="x"></div>
+        <div class="textfield small-50 flex-pd-left" label="Apellidos" ng-model="y"></div>
+
+        <div class="select small" label="Tipo de documento" suggestions="s" ng-model="d"></div>
+    </div>
+    <div class="actions">
+        <button class="flat right theme-secondary" sidenav="#sidenav">Sidenav</button>
+    </div>
+</div>
+
+<!-- GRID SHEET -->
+<div class="grid-sheet" columns="5">
+    <div class="item">
+        <img class="icon" src="Vi.png" alt=""/>
+        <div class="description">Vi</div>
+    </div>
+    <div class="item disabled">
+        <img class="icon" src="5.png" alt=""/>
+        <div class="description">Amumu</div>
+    </div>
+    <div class="item">
+        <img class="icon" src="4.png" alt=""/>
+        <div class="description">Alistar</div>
+    </div>
+    <div class="item">
+        <img class="icon" src="26.png" alt=""/>
+        <div class="description">Evelynn</div>
+    </div>
+    <div class="item disabled">
+        <i class="icon">person_add</i>
+        <div class="description">Nuevo champs</div>
+    </div>
+</div>
+
+<!-- LIST SHEET -->
+<div class="list-sheet" columns="3">
+    <div class="item">
+        <img class="icon" src="Vi.png" alt=""/>
+        <div class="detail">Vi</div>
+    </div>
+    <div class="item">
+        <img class="icon" src="5.png" alt=""/>
+        <div class="detail">Amumu</div>
+    </div>
+    <div class="divider"></div>
+    <div class="item">
+        <img class="icon" src="4.png" alt=""/>
+        <div class="detail">Alistar</div>
+    </div>
+    <div class="item">
+        <img class="icon" src="26.png" alt=""/>
+        <div class="detail">Evelynn</div>
+    </div>
+    <div class="item disabled">
+        <i class="icon">person_add</i>
+        <div class="detail">Nuevo</div>
+    </div>
+</div>
+    
+<!-- AUTOCOMPLETE RECORD -->
+<div class="autocomplete-record small" label="Autocomplete test" changed-event="xd($selected)"
+    ng-model="friend" suggestions="friends" key-title="name" key-subtitle="email" key-img="img"></div>
+
+<!-- CATALOG -->
+<!-- views: cantidad de im�genes a mostrar -->
+<!-- gallery: galler�a de im�genes en el controlador -->
+<!-- title-action: t�tulo de opci�n punteada al final -->
+<!-- click-action: acci�n a ejectuar al dar click en opci�n punteada al final -->
+<!-- click-efect: boolean, valor predefinido true -->
+<!-- click-efect: determina si se realiza el efecto slide cuando se selecciona imagen con click -->
+ <div class="catalog" views="5" gallery="catalogGallery" 
+    title-action="Ver todas" click-action="showAll" click-efect="false">
+</div>
+
+
+<div class="slider discrete" ng-model="xd" showcase="true" label="Daniel" icon="person"></div>
+
+<!-- BOTTOM NAVIGATION -->
+<div id="views" class="views-bottom-navigation">
+    <div id="descripcion" class="content">
+
+    </div>
+    <div id="construccion" class="content">
+
+    </div>
+    <div id="estadisticas" class="content">
+
+    </div>
+</div>
+
+<!-- $scope.optionsBottomNav = [
+        { icon: "home", label: "Descripción", color: "red" },
+        { icon: "device_hub", label: "Runas", disabled: false },
+        { icon: "equalizer", label: "Estadísticas", color: "lime" },
+        { icon: "build", label: "Construcción", color: "yellow", active: true },
+        { icon: "person", label: "Usuarios", color: "blue" }
+    ];-->
+
+<div class="bottom-navigation" options="optionsBottomNav"></div>
+
+<div class="video-youtube" ng-src="https://www.youtube.com/embed/GxCsbh-dd-0"></div>
+
+<!-- SIDENAV -->
+<nav id="sidenav-main" class="sidenav"
+     ng-open="visible">
+    <div class="content">
+        <div class="banner">
+            <img class="background" src="elise.jpg" alt=""/>
+
+            <div class="description">
+                <label class="title">Expocanciones Internacional Group</label>
+                <label class="subtitle">expocanciones@gmail.com</label>
+            </div>
+        </div>
+
+        <main class="sidenav-menu">
+            <div class="subheader">
+                <span>Menú de opciones</span>
+            </div>
+
+            <div class="sidenav-item">
+                <div class="description">
+                    <a><span>SidenavItem1</span></a>
+                </div>
+
+                <div class="options">
+                    <ul>
+                        <li>
+                            <a>Option1</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidenav-item">
+                <div class="description">
+                    <a>
+                        <i>person</i>
+                        <span>SidenavItem2</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidenav-item active" ng-disabled="false">
+                <div class="description">
+                    <a>
+                        <i>book</i>
+                        <span>SidenavItem3</span>
+                        <span class="badge">2</span>
+                    </a>
+                </div>
+
+                <div class="options">
+                    <ul>
+                        <li class="disabled">
+                            <a>Option1</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sidenav-item" ng-disabled="true">
+                <div class="description">
+                    <a>
+                        <i>book</i>
+                        <span>SidenavItem4</span>
+                        <span class="badge">8</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</nav>
+
+<!-- CARD -->
+
+<div class="card">
+    <div class="primary-title">
+        <div class="media-area">
+            <img src="Vi.png" alt=""/>
+        </div>
+        <div class="detail">
+            <div class="avatars">
+                <div class="avatar">
+                    <img src="RumbleSquare.png" alt=""/>
+                </div>
+            </div>
+            <div class="content">
+                <div class="title">Rumble</div>
+                <div class="subtitle">Skin: Super galáctico</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rich-media auto">
+        <div class="background">
+            <img src="rumble.jpg">
+        </div>
+
+        <div class="content">
+            <div class="primary-title">
+                <div class="detail">
+                    <div class="avatars">
+                        <div class="avatar">
+                            <img src="RumbleSquare.png" alt=""/>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="title">Rumble</div>
+                        <div class="subtitle">Skin: Super galáctico</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos. En vez de eso, él usa Calor como su recurso secundario. Rumble empieza con 0 de Calor y llega a un máximo de 100.
+            </div>
+            <div class="actions">
+                <button class="flat right">Descargar</button>
+                <button class="action"><i>share</i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="optional-header">
+        <div class="detail">
+            <div class="avatars">
+                <div class="avatar">
+                    <img src="RumbleSquare.png" alt=""/>
+                </div>
+            </div>
+            <div class="content">
+                <div class="title">Rumble</div>
+                <div class="subtitle">Skin: Super galáctico</div>
+            </div>
+        </div>
+        <button class="action">
+            <i>person</i>
+        </button>
+    </div>
+
+    <div class="support-content">
+        Incluso entre los yordles, Rumble era el más pequeño de todos. Como tal,
+        siempre sufría el acoso de los demás. Para sobrevivir, tenía que ser más
+        ingenioso y astuto que el resto. Desarrolló muy mal temperamento y se ganó
+        la reputación de estar siempre buscando camorra. Esto lo convirtió en un 
+        solitario, pero le daba igual. Le gustaba retocar objetos, prefería la compañía
+        de los artefactos y era habitual encontrárselo hurgando en el desagüe. Demostró
+        tener gran potencial como mecánico. Sus profesores le recomendaron que se apuntase
+        en la Academia Yordle de Ciencia y Progreso de Piltóver, donde podría haber llegado
+        a ser uno de los mejores estudiantes de Heimerdinger, pero Rumble rechazó la oferta.
+        Creía que Heimerdinger y sus socios eran unos vendidos, que comerciaban con los 
+        humanos para venderles tecnología superior yordle a cambio de palmaditas en la cabeza,
+        pero sin dejar de ser el objetivo de sus chistes.
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="media-area">
+        <div class="image">
+            <div class="background">
+                <img src="5.png" alt=""/>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="action">
+                <i>share</i>
+            </button>
+            <button class="action">
+                <i>send</i>
+            </button>
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="label">Puntaje:</div>
+        <button class="flat right">
+            Share
+        </button>
+        <button class="flat right">
+            Send
+        </button>
+
+        <button class="action">
+            <i>add_shopping_cart</i>
+        </button>
+    </div>
+
+    <div class="actions">
+        <button class="action"><i>person</i></button>
+        <div class="label right">:Puntaje</div>
+        <div class="rating right" ng-model="tix"></div>
+    </div>
+</div> 
+
+<!-- CAROUSEL & CATALOG -->
+<!-- 
+    $scope.gallery = [
+        {
+            src: "rumble.jpg",
+            title: "Rumble",
+            subtitle: "Skin: supergaláctico"
+        },
+        {
+            src: "rumble-jungle.jpg",
+            title: "Rumble",
+            subtitle: "Skin: jungla china"
+        }
+    ];
+    
+    $scope.actions = [
+        { name: "show", label: "Ver más" }
+    ];
+-->
+
+<div class="carousel contrast" gallery="gallery" actions="actions"></div>
+<div class="catalog contrast" gallery="gallery" actions="actions"></div>
+
+<!-- GALLERY -->
+<!-- 
+    $scope.gallery = [
+        {
+            src: "26.png",
+            icon: "image",
+            name: "Skin: supergaláctico"
+        },
+        {
+            src: "5.png",
+            icon: "image",
+            name: "Skin: jungla china"
+        }
+    ];
+-->
+<div class="gallery" images="gallery"></div>
+
+<!-- ITEM LIST -->
+<div class="flex small margin-bottom-16 bordered">
+    <div class="item-list">
+        <div class="box">
+            <div class="avatar">
+                <img src="RumbleSquare.png" alt=""/>
+            </div>
+
+            <div class="controls">
+                <div class="radiobutton" value="y" name="D" ng-model="r"></div>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="flat theme-primary">Flat</button>
+            <button class="raised right theme-primary">Raised</button>
+            <button class="action"><i>person</i></button>
+        </div>
+    </div>
+    <div class="item-list">
+        <div class="box">                            
+            <div class="radiobutton" value="X" name="D" ng-model="r"></div>
+            <div class="controls">
+                <span class="badge">3</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+            </div>
+        </div>
+    </div>
+    <div class="item-list">
+        <div class="box">                            
+            <div class="checkbox-control" ng-model="ju"></div>
+            <div class="controls">
+                <div class="switch" ng-model="ju"></div>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+            </div>
+        </div>
+    </div>
+    <div class="item-list">
+        <div class="box">                            
+            <div class="switch" ng-model="ju"></div>
+            <div class="controls">
+                <button class="action"><i>person</i></button>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+            </div>
+        </div>
+    </div>
+    <div class="item-list">
+        <div class="box">
+            <div class="avatar">
+                <img src="RumbleSquare.png" alt=""/>
+            </div>
+
+            <div class="controls">
+                <span class="emphasis">5 mins.</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item-list two-line">
+        <div class="box">
+            <div class="avatar">
+                <img src="RumbleSquare.png" alt=""/>
+            </div>
+
+            <div class="controls">
+                <div class="radiobutton" value="a" name="D" ng-model="r"></div>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+    <div class="item-list two-line">
+        <div class="box">
+            <div class="radiobutton" value="ty" name="D" ng-model="r"></div>
+
+            <div class="controls">
+                <div class="checkbox-control" ng-model="yui"></div>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+    <div class="item-list two-line">
+        <div class="box">
+            <div class="switch" ng-model="yui"></div>
+
+            <div class="controls">
+                <button class="action"><i>done</i></button>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+    <div class="item-list two-line">
+        <div class="box">
+            <div class="checkbox-control" ng-model="ryui"></div>
+
+            <div class="controls">
+                <span class="emphasis">6 horas</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+        <div class="actions floating">
+            <button class="flat theme-primary">Flat</button>
+            <button class="raised right theme-primary">Raised</button>
+            <button class="action"><i>person</i></button>
+        </div>
+    </div>
+    <div class="item-list two-line">
+        <div class="box">
+            <div class="avatar">
+                <img src="RumbleSquare.png" alt=""/>
+            </div>
+
+            <div class="controls">
+                <span class="badge">6</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="item-list three-line">
+        <div class="box">
+            <div class="avatar">
+                <img src="RumbleSquare.png" alt=""/>
+            </div>
+
+            <div class="controls">
+                <div class="switch" ng-model="sr"></div>
+                <span class="emphasis">6 horas</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+        <div class="actions">
+            <button class="flat theme-primary">Flat</button>
+            <button class="raised right theme-primary">Raised</button>
+            <button class="action"><i>person</i></button>
+        </div>
+    </div>
+    <div class="item-list three-line">
+        <div class="box">
+            <div class="radiobutton" value="ty" name="D" ng-model="r"></div>
+
+            <div class="controls">
+                <div class="checkbox-control" ng-model="yui"></div>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+    <div class="item-list three-line">
+        <div class="box">
+            <div class="switch" ng-model="yui"></div>
+
+            <div class="controls">
+                <button class="action"><i>done</i></button>
+                <span class="emphasis">7 horas</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+    <div class="item-list three-line">
+        <div class="box">
+            <div class="checkbox-control" ng-model="ryui"></div>
+
+            <div class="controls">
+                <span class="emphasis">6 horas</span>
+                <div class="checkbox-control" ng-model="dr"></div>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+        <div class="actions floating contrast">
+            <button class="flat theme-primary">Flat</button>
+            <button class="raised right theme-primary">Raised</button>
+            <button class="action"><i>person</i></button>
+        </div>
+    </div>
+    <div class="item-list three-line">
+        <div class="box">
+            <div class="avatar">
+                <img src="RumbleSquare.png" alt=""/>
+            </div>
+
+            <div class="controls">
+                <div class="badge">6</div>
+                <span class="emphasis">6 horas</span>
+            </div> 
+            <div class="content">
+                <div class="title">Rumble supergaláctico</div>
+                <p class="description">
+                    Las habilidades de Rumble no tienen ningún costo relacionado a ellas y sus habilidades son únicamente limitadas por enfriamientos.
+                </p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DATATABLE -->
+<div class="datatable"
+     ng-class="{'condense': disabled, 'theme-primary': primary, 'theme-secondary': secondary, 'raised': raised}">
+    <div class="header">
+        <div class="title">Datatable</div>
+
+        <div class="search-box contrast">
+            <div class="nav-icon">
+                <button class="action">
+                    <i>book</i>
+                </button>
+            </div> 
+            <input ng-model="lo">
+        </div>
+
+        <div class="actions">
+            <button class="action">
+                <i>reply</i>
+            </button>
+            <button class="action" ng-disabled="true">
+                <i>person</i>
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th class="small-25 align-center">Codigo</th>
+                    <th class="small-25">Nombre</th>
+                    <th class="small-25">Precio</th>
+                    <th class="small-25 align-right">Ingresado</th>
+                    <th class="control-cell"><i>place</i></th>
+                    <th class="control-cell"><i>done</i></th>
+                    <th class="control-cell"><i>star</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="small-25 align-center">
+                        <span class="poster theme-secondary">1065642202</span>
+                    </td>
+                    <td class="small-25">Daniel Andres Castillo</td>
+                    <td class="small-25">$ 40.000</td>
+                    <td class="small-25">
+                        <div class="textfield align-right" ng-model="x"></div>
+                    </td>
+                    <td class="control-cell">
+                        <button class="action">
+                            <i>person</i>
+                        </button>
+                    </td>
+                    <td class="control-cell">
+                        <div class="checkbox-control" ng-model="si"></div>
+                    </td>
+                    <td class="control-cell">
+                        <i>mail</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="small-25 align-center">
+                        <span class="poster theme-primary">1065642202</span>
+                    </td>
+                    <td class="small-25">Daniel Andres Castillo</td>
+                    <td class="small-25">$ 40.000</td>
+                    <td class="small-25">
+                        <div class="textfield align-right" ng-model="x"></div>
+                    </td>
+                    <td class="control-cell">
+                        <button class="action">
+                            <i>person</i>
+                        </button>
+                    </td>
+                    <td class="control-cell">
+                        <div class="checkbox-control" ng-model="si"></div>
+                    </td>
+                    <td class="control-cell">
+                        <i>mail</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="small-25 align-center">
+                        <span class="poster">1065642202</span>
+                    </td>
+                    <td class="small-25">Daniel Andres Castillo</td>
+                    <td class="small-25">$ 40.000</td>
+                    <td class="small-25">
+                        <div class="textfield align-right" ng-model="x"></div>
+                    </td>
+                    <td class="control-cell">
+                        <button class="action">
+                            <i>person</i>
+                        </button>
+                    </td>
+                    <td class="control-cell">
+                        <div class="checkbox-control" ng-model="si"></div>
+                    </td>
+                    <td class="control-cell">
+                        <i>mail</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="notification" ng-visible="visible2">
+    <div class="content">
+        <div class="avatar">
+            <img src="RumbleSquare.png">
+            <!--<span>D</span>-->
+            <!--<i>person</i>-->
+        </div>
+        <p class="description">
+            Incluso entre los yordles, Rumble era el más pequeño de todos.
+        </p>
+    </div> 
+    <div class="actions">
+        <button class="flat right" ng-disabled="disabled">
+            Activate
+        </button>
+        <button class="raised right" ng-disabled="disabled" ng-click="visible2 = false;">
+            Cancel
+        </button>
+
+        <button class="action" ng-disabled="disabled">
+            <i>reply</i>
+        </button>
+    </div>
+</div>
+
+<!-- NOTIFICATION FLOATING -->
+<div class="notification-floating" ng-visible="visible3">
+    <div class="content">
+        <div class="avatar">
+            <img src="RumbleSquare.png">
+            <!--<span>D</span>-->
+            <!--<i>person</i>-->
+        </div>
+        <p class="description">
+            Incluso entre los yordles, Rumble era el más pequeño de todos.
+        </p>
+    </div> 
+    <div class="actions">
+        <button class="flat right" ng-disabled="disabled">
+            Activate
+        </button>
+        <button class="raised right" ng-disabled="disabled" ng-click="visible2 = false;">
+            Cancel
+        </button>
+
+        <button class="action" ng-disabled="disabled">
+            <i>reply</i>
+        </button>
+    </div>
+</div>
+
+<!-- IMAGE EDITOR -->
+
+<div class="image-editor" ng-src="vm.src" ng-listener="crop($img)" 
+     ng-ratio="1:1" ng-width="240" ng-selection="75">
+</div>
