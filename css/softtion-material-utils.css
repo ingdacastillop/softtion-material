@@ -1690,45 +1690,6 @@
 .mg-footer-buttons {
     margin-bottom: 48px !important; }
 
-.margin-auto {
-    margin: auto; }
-
-.margin-vertical-4 {
-    margin-bottom: 4px !important;
-    margin-top: 4px !important; }
-
-.margin-vertical-8 {
-    margin-bottom: 8px !important;
-    margin-top: 8px !important; }
-
-.margin-vertical-16 {
-    margin-bottom: 16px !important;
-    margin-top: 16px !important; }
-
-.margin-top-4 {
-    margin-top: 4px !important; }
-
-.margin-top-8 {
-    margin-top: 8px !important; }
-
-.margin-top-16 {
-    margin-top: 16px !important; }
-
-.margin-bottom-4 {
-    margin-bottom: 4px !important; }
-
-.margin-bottom-8 {
-    margin-bottom: 8px !important; }
-
-.margin-bottom-16 {
-    margin-bottom: 16px !important; }
-
-.margin-button-floating {
-    margin-bottom: 88px !important; }
-
-.margin-footer-buttons {
-    margin-bottom: 48px !important; }
-
 .headline-font-1 {
     font-family: var(--headline-1-font);
     font-size: var(--headline-1-size);

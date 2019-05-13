@@ -1095,56 +1095,6 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
     });
 })();
 
-// Class Time
-
-(function () {
-    !function (fnGlb) {        
-        var glb = (typeof window !== "undefined") ? window : 
-            (typeof global !== "undefined") ? 
-                global : typeof self !== "undefined" ? self : undefined;
-                
-        if (glb) glb.Time = fnGlb(window.softtion); // Se definió
-    }(function (softtion) {
-        
-        function Time(milliseconds) {
-            Class.CallCheck(this, Time);
-
-            var self = Class.ConstructorReturn(
-                this, (Time.__proto__ || Object.getPrototypeOf(Time)).call(this)
-            );
-    
-            self.setTime(milliseconds);
-        }
-
-        var functions = [
-            { key: "setTime", value: setTime },
-            { key: "getDescription", value: getDescription }
-        ];
-
-        Class.Create(Time, functions);
-        
-        function setTime(milliseconds) {
-            this.milliseconds = milliseconds; return this;
-        }
-
-        function getDescription() {
-            var seconds = Math.roundDecimal(this.milliseconds/1000);
-
-            if (seconds < 60) 
-                return "00:" + softtion.leadingCharBefore(seconds, "0", 2); 
-
-            var minutes = parseInt(seconds / 60);
-            seconds = seconds - (minutes * 60); // Recalculando
-            
-            var text = softtion.leadingCharBefore(minutes, "0", 2);
-
-            return text + ":" + softtion.leadingCharBefore(seconds, "0", 2); 
-        }
-
-        return Time; // Retornando clase Time
-    });
-})();
-
 // Class ColorMaterial
 
 (function () {
@@ -1865,3 +1815,53 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
         }
     })();
 });
+
+// Class Time
+
+(function () {
+    !function (fnGlb) {        
+        var glb = (typeof window !== "undefined") ? window : 
+            (typeof global !== "undefined") ? 
+                global : typeof self !== "undefined" ? self : undefined;
+                
+        if (glb) glb.Time = fnGlb(window.softtion); // Se definió
+    }(function (softtion) {
+        
+        function Time(milliseconds) {
+            Class.CallCheck(this, Time);
+
+            var self = Class.ConstructorReturn(
+                this, (Time.__proto__ || Object.getPrototypeOf(Time)).call(this)
+            );
+    
+            self.setTime(milliseconds);
+        }
+
+        var functions = [
+            { key: "setTime", value: setTime },
+            { key: "getDescription", value: getDescription }
+        ];
+
+        Class.Create(Time, functions);
+        
+        function setTime(milliseconds) {
+            this.milliseconds = milliseconds; return this;
+        }
+
+        function getDescription() {
+            var seconds = Math.roundDecimal(this.milliseconds/1000);
+
+            if (seconds < 60) 
+                return "00:" + softtion.leadingCharBefore(seconds, "0", 2); 
+
+            var minutes = parseInt(seconds / 60);
+            seconds = seconds - (minutes * 60); // Recalculando
+            
+            var text = softtion.leadingCharBefore(minutes, "0", 2);
+
+            return text + ":" + softtion.leadingCharBefore(seconds, "0", 2); 
+        }
+
+        return Time; // Retornando clase Time
+    });
+})();

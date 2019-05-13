@@ -5815,10 +5815,9 @@ img.center-content {
     font-weight: var(--body-2-weight); }
 
 .item-list.condense > .box > .content > p {
-    font-family: var(--button-font);
-    font-size: var(--button-size);
-    letter-spacing: var(--button-letterspacing);
-    font-weight: var(--button-weight); }
+    font-family: var(--caption-font);
+    font-size: var(--caption-size);
+    letter-spacing: var(--caption-letterspacing); }
 
 .item-list > .box > .content > .title + p {
     margin-top: 2px; }
