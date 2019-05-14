@@ -5,7 +5,7 @@
  https://material.softtion.com.co
  License: MIT
  Created: 19/Nov/2016
- Updated: 22/Abr/2019
+ Updated: 14/May/2019
 */
 
 (function (factory) {
@@ -902,7 +902,7 @@
                 );
 
         box.addChildren(description).addChildren(value).
-            addChildren(lineBordered).addChildren(input).
+            addChildren(input).addChildren(lineBordered).
             addChildren(lineShadow).addChildren(uniqueSelection).
             addChildren(label).addChildren(buttonAction).
             addChildren(buttonClear).addChildren(spanHelper).addChildren(list);
@@ -2400,8 +2400,7 @@
                 addAttribute("ng-disabled", "ngDisabled").
                 addAttribute("ng-class", "{\"holder-hide\": isHolderHide()}").
                 addAttribute("placeholder", "{{placeholder}}").
-                addAttribute("focused-element", "focusedInput").
-                addAttribute("ng-style", "{width: resizeWidthInput()}");
+                addAttribute("focused-element", "focusedInput");
 
         var lineBordered = softtion.html("div").addClass("line-bordered");
         var lineShadow = softtion.html("div").addClass("line-shadow");
@@ -2474,26 +2473,6 @@
                 
                 $scope.isHolderHide = function () {
                     return ($scope.isLabel && !$scope.inputActive);
-                };
-
-                $scope.resizeWidthInput = function () {
-                    var isIcon = ($scope.isIconDescription || $scope.isIconImg);
-                    
-                    if ($scope.ngModel.isEmpty()) // Sin elementos
-                        return (isIcon) ? "calc(100% - 36px)" : "100%";
-                    
-                    var isCapsule = $element.hasClass("capsule");
-                     
-                    if (isIcon)
-                        return (isCapsule) ? "100%" : "calc(100% - 36px)";
-                    
-                    var sizeContent = $element.width(), 
-                        sizeChips = chips.width();
-                
-                    if (isCapsule) sizeContent -= 4;
-                    
-                    return (sizeChips < (sizeContent / 2)) ?
-                        ((sizeContent - sizeChips - 12) + "px") : "100%";
                 };
 
                 $scope.clickActiveElement = function ($event) {
@@ -3247,7 +3226,7 @@
                                     setText("{{month.name}}").
                                     addAttribute("ng-click", "selectMonth(month.value)").
                                     addAttribute("ng-class",
-                                        "{active : isActiveMonth(month.value), disabled: monthListEnabled(month.value) }"
+                                        "{active : isActiveMonth(month.value), disabled: monthListEnabled(month.value)}"
                                     )
                             )
                     )
@@ -3266,8 +3245,11 @@
                 softtion.html("button").
                     addClass(["flat", "ripple"]).setText("Ok").
                     addAttribute("ng-click", "setDate()")
-            ).
-            addChildren(
+            ).addChildren(
+                softtion.html("button").
+                    addClass(["flat", "ripple"]).setText("Hoy").
+                    addAttribute("ng-click", "now()")
+            ).addChildren(
                 softtion.html("button").
                     addClass(["flat", "ripple"]).setText("Cancelar").
                     addAttribute("ng-click", "cancel()")
@@ -3334,6 +3316,7 @@
                 var listener = new Listener($scope, Listener.KEYS.DATEPICKER),
                     
                     today = new Date().normalize("date"), 
+                    selected = false, start = false,
                     dateStart = new Date(), dateCalendar = new Date(),
                     
                     DAYS_OF_MONTHS = MANAGER_DATETIME.DAYS_OF_MONTHS,
@@ -3601,7 +3584,11 @@
                 // FUNCIONES PARA CONTROL DE LA FECHA
 
                 $scope.setDate = function () {
-                    $scope.ngModel = getDate(); listener.launch(Listeners.SELECT);
+                    selected = true; $scope.ngModel = getDate(); listener.launch(Listeners.SELECT);
+                };
+
+                $scope.now = function () {
+                    $scope.ngModel = new Date(); listener.launch(Listeners.SELECT);
                 };
 
                 $scope.cancel = function () { listener.launch(Listeners.CANCEL); };
@@ -3611,9 +3598,13 @@
                     dateStart.setDate(1); 
                     dateStart.setMonth(date.getMonth()); 
 
-                    $scope.year = date.getFullYear();
-                    $scope.day = date.getDate();
-                    $scope.month = date.getMonth();
+                    if (selected || !start) {
+                        selected = false; start = true;
+                        
+                        $scope.year = date.getFullYear();
+                        $scope.day = date.getDate();
+                        $scope.month = date.getMonth();
+                    } // Se ha seleccionado desde el componente
 
                     $scope.monthText = MONTHS_OF_YEAR[$scope.month];
 
@@ -6992,6 +6983,9 @@
         var spanHelper = softtion.html("span").addClass(["help", "truncate"]).
                 setText("{{helperText}}").addAttribute("ng-hide", "!isHelperActive()");
 
+        var spanCounter = softtion.html("span").addClass(["counter", "truncate"]).
+                setText("{{getTextCounter()}}").addAttribute("ng-if", "isCounterAllowed()");
+
         var list = softtion.html("ul").
                 addAttribute("ng-class", "{show: showList, hide: !showList, higher: higher}").
                 addChildren(
@@ -7011,8 +7005,9 @@
                 );
 
         box.addChildren(description).addChildren(input).
-            addChildren(lineBordered).addChildren(label).addChildren(chips).
-            addChildren(spanHelper).addChildren(button).addChildren(list);
+            addChildren(lineBordered).addChildren(label).
+            addChildren(chips).addChildren(spanHelper).
+            addChildren(spanCounter).addChildren(button).addChildren(list);
 
         return content.create(); // Componente
     };
@@ -7030,6 +7025,7 @@
                 required: "=?",
                 optional: "=?",
                 ngDisabled: "=?",
+                ngCounter: "=?",
                 key: "@keyDescription",
                 suggestions: "=",
                 iconDescription: "@",
@@ -7084,8 +7080,16 @@
                     return !$scope.ngModel.isEmpty();
                 };
 
+                $scope.isCounterAllowed = function () {
+                    return $scope.ngCounter;
+                };
+
                 $scope.isHelperActive = function () {
                     return softtion.isArrayEmpty($scope.ngModel) || $scope.helperPermanent;
+                };
+
+                $scope.getTextCounter = function () {
+                    return $scope.ngModel.size() + " seleccionado (s)";
                 };
 
                 $scope.describeSuggestion = function (suggestion) {
@@ -7880,7 +7884,7 @@
                 setText("{{getTextCounter()}}").addAttribute("ng-if", "isCounterAllowed()");
 
         box.addChildren(description).addChildren(value).
-            addChildren(lineBordered).addChildren(input).
+            addChildren(input).addChildren(lineBordered).
             addChildren(lineShadow).addChildren(iconAction).
             addChildren(checkBox).addChildren(label).addChildren(spanHelper).
             addChildren(spanError).addChildren(spanCounter);
@@ -7905,7 +7909,7 @@
                 ngReadonly: "=?",
                 minLength: "=?",
                 maxLength: "=?",
-                counterVisible: "=?",
+                ngCounter: "=?",
                 iconDescription: "@",
                 iconImg: "@",
                 iconAction: "@",
@@ -8030,7 +8034,7 @@
                 ngReadonly: "=?",
                 minLength: "=?",
                 maxLength: "=?",
-                counterVisible: "=?",
+                ngCounter: "=?",
                 iconDescription: "@",
                 iconImg: "@",
                 placeholder: "@",
@@ -11107,7 +11111,7 @@
         };
 
         $scope.isCounterAllowed = function () {
-            return $scope.counterVisible && (!isNaN($scope.maxLength)) && ($scope.maxLength > 0);
+            return $scope.ngCounter && (!isNaN($scope.maxLength)) && ($scope.maxLength > 0);
         };
         
         $scope.isHideHelper = function () {
@@ -11397,9 +11401,11 @@
                         $scope.area = newValue; // Nuevo valor
                     }
                 }  else {
-                    if (softtion.isUndefined(newValue)) $scope.countEnter = 0;
-                    
-                    if (!(newValue === $scope.area)) $scope.area = newValue;
+                    if (softtion.isUndefined(newValue)) {
+                        $scope.countEnter = 0;
+                    } else {
+                        if (!(newValue === $scope.area)) $scope.area = newValue;
+                    }
                 } // Verificando si el texto del input es diferente
             });
 
@@ -11426,7 +11432,7 @@
         };
 
         $scope.isCounterAllowed = function () {
-            return $scope.counterVisible && (!isNaN($scope.maxLength)) && ($scope.maxLength > 0);
+            return $scope.ngCounter && (!isNaN($scope.maxLength)) && ($scope.maxLength > 0);
         };
 
         $scope.textCounter = function () {

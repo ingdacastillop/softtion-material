@@ -52,12 +52,26 @@
     --inline-margin-left: 20%;
     --inline-left-line-shadow: 60%; }
 
+.label-25 {
+    --inline-width: 75%;
+    --inline-width-label: calc(25% - 12px);
+    --inline-left: 25%;
+    --inline-margin-left: 25%;
+    --inline-left-line-shadow: 62.5%; }
+
 .label-30 {
     --inline-width: 70%;
     --inline-width-label: calc(30% - 12px);
     --inline-left: 30%;
     --inline-margin-left: 30%;
     --inline-left-line-shadow: 65%; }
+
+.label-35 {
+    --inline-width: 65%;
+    --inline-width-label: calc(35% - 12px);
+    --inline-left: 35%;
+    --inline-margin-left: 35%;
+    --inline-left-line-shadow: 67.5%; }
 
 .label-40 {
     --inline-width: 60%;
@@ -66,6 +80,20 @@
     --inline-margin-left: 40%;
     --inline-left-line-shadow: 70%; }
 
+.label-45 {
+    --inline-width: 55%;
+    --inline-width-label: calc(45% - 12px);
+    --inline-left: 45%;
+    --inline-margin-left: 45%;
+    --inline-left-line-shadow: 72.5%; }
+
+.label-55 {
+    --inline-width: 45%;
+    --inline-width-label: calc(55% - 12px);
+    --inline-left: 55%;
+    --inline-margin-left: 55%;
+    --inline-left-line-shadow: 77.5%; }
+
 .label-60 {
     --inline-width: 40%;
     --inline-width-label: calc(60% - 12px);
@@ -73,12 +101,26 @@
     --inline-margin-left: 60%;
     --inline-left-line-shadow: 80%; }
 
+.label-65 {
+    --inline-width: 35%;
+    --inline-width-label: calc(65% - 12px);
+    --inline-left: 65%;
+    --inline-margin-left: 65%;
+    --inline-left-line-shadow: 82.5%; }
+
 .label-70 {
     --inline-width: 30%;
     --inline-width-label: calc(70% - 12px);
     --inline-left: 70%;
     --inline-margin-left: 70%;
     --inline-left-line-shadow: 85%; }
+
+.label-75 {
+    --inline-width: 25%;
+    --inline-width-label: calc(75% - 12px);
+    --inline-left: 75%;
+    --inline-margin-left: 75%;
+    --inline-left-line-shadow: 87.5%; }
 
 .label-80 {
     --inline-width: 20%;
@@ -151,6 +193,31 @@
 .textfield > .content.disabled {
     pointer-events: none; }
 
+.autocomplete.synthetic > .content, 
+.clockpicker-input.synthetic > .content, 
+.datepicker-input.synthetic > .content,
+.yearpicker-input.synthetic > .content, 
+.labelfield.synthetic > .content, 
+.select.synthetic > .content, 
+.select-multiple.synthetic > .content,
+.textfield.synthetic > .content, 
+.textfield-readonly.synthetic > .content {
+    padding: 2px 0px 12px 0px; }
+
+.chip-input.synthetic > .content {
+    padding: 19px 0px 17px 0px; }
+
+.autocomplete.synthetic.inline > .content, 
+.clockpicker-input.synthetic.inline > .content, 
+.datepicker-input.synthetic.inline > .content,
+.yearpicker-input.synthetic.inline > .content, 
+.labelfield.synthetic.inline > .content, 
+.select.synthetic.inline > .content, 
+.select-multiple.synthetic.inline > .content,
+.textfield.synthetic.inline > .content, 
+.textfield-readonly.synthetic.inline > .content {
+    padding: 2px 0px 2px 0px; }
+
 .autocomplete > .content > .box,
 .chip-input > .content > .box,
 .clockpicker-input > .content > .box,
@@ -187,6 +254,13 @@
     border-radius: 4px;
     margin-bottom: 4px;
     box-sizing: border-box; }
+
+.chip-input.synthetic > .content > .box { 
+    padding: 0px 1px;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    box-shadow: inset 0 0 2px 0 var(--background-border);
+    border: 1px solid var(--background-border) !important; }
 
 * > .content > .box > .description {
     position: absolute;
@@ -351,6 +425,23 @@
 .inline.outline > .content > .box > label.active {
     top: var(--inline-top-label); }
 
+*.synthetic:not(.inline) > .content > .box > label {
+    line-height: 16px;
+    top: 2px;
+    left: 6px;
+    cursor: none;
+    height: 16px;
+    width: calc(100% - 12px);
+    font-family: var(--caption-font);
+    font-size: var(--caption-size);
+    letter-spacing: var(--caption-letterspacing);
+    font-weight: var(--caption-weight); }
+
+*.synthetic.inline > .content > .box > label {
+    top: 6px;
+    margin-left: 6px;
+    width: calc(var(--inline-width-label) - 6px); }
+
 * > .content > .box > label > span {
     margin-left: 2px; }
 
@@ -382,6 +473,17 @@
 .autocomplete.outline > .content.disabled-clear {
     --input-width-default: calc(100% - 22px); }
 
+.synthetic {
+    --input-width-default: calc(100% - 12px);
+    --input-padding-default: 16px 6px 4px 6px; }
+
+.autocomplete.synthetic, .select.synthetic, 
+.select-multiple.synthetic {
+    --input-width-default: calc(100% - 36px); }
+
+.chip-input.synthetic { 
+    --input-width-default: calc(100% - 10px); }
+
 * > .content > .box > input {
     position: relative;
     cursor: text;
@@ -411,6 +513,16 @@
 
 .chip-input > .content.empty > .box > input:disabled {
     height: 32px; }
+
+.chip-input.synthetic > .content > .box > input {
+    margin: 0px 5px; }
+
+.chip-input.synthetic > .content.empty > .box > input,
+.chip-input.synthetic > .content > .box > input:focus {
+    height: 28px; }
+
+.chip-input.synthetic > .content.empty > .box > input:disabled {
+    height: 28px; }
 
 .textfield.align-center > .content > .box > input,
 .textfield-readonly.align-center > .content > .box > input { 
@@ -488,6 +600,10 @@
 .outline:not(.inline) > .content.label-inactive > .box > input {
     padding-top: 2px; }
 
+*.synthetic.inline > .content > .box > input {
+    padding: 0px 6px 14px 6px;
+    width: calc(var(--inline-width) - var(--inline-width-lower-input) - 12px); }
+
 * > .content > .box > input::-webkit-input-placeholder {
     visibility: hidden;
     font-family: var(--body-1-font);
@@ -538,6 +654,14 @@
 .labelfield.outline {
     --value-height-default: 28px;
     --value-line-height-default: 28px; }
+
+.synthetic {
+    --value-width-default: calc(100% - 12px);
+    --value-left-default: 6px;
+    --value-bottom-default: 16px; }
+
+.synthetic.inline {
+    --value-bottom-default: 12px; }
 
 * > .content > .box > .value {
     position: absolute;
@@ -717,6 +841,29 @@
     margin-left: calc(var(--inline-margin-left) + 12px);
     width: calc(var(--inline-width) - 46px); }
 
+.select-multiple.synthetic, .datepicker-input.synthetic,
+.autocomplete.synthetic, .select.synthetic, 
+.yearpicker-input.synthetic, .clockpicker-input.synthetic {
+    --value-width-default: calc(100% - 36px); }
+
+.datepicker-input.synthetic > .content > .box > .value,
+.yearpicker-input.synthetic > .content > .box > .value, 
+.clockpicker-input.synthetic > .content > .box > .value {
+    margin-left: 6px;
+    padding: 16px 0px 4px 0px; }
+
+.datepicker-input.synthetic.inline > .content > .box > .value,
+.yearpicker-input.synthetic.inline > .content > .box > .value, 
+.clockpicker-input.synthetic.inline > .content > .box > .value {
+    width: calc(var(--inline-width) - 36px);
+    padding: 0px 0px 14px 0px;
+    margin-left: calc(var(--inline-left) + 6px); }
+
+*.synthetic.inline > .content > .box > .value {
+    left: calc(var(--inline-left) + 6px);
+    --value-bottom-default: 16px;
+    width: calc(var(--inline-width) - var(--inline-width-lower-value) - 12px); }
+
 .autocomplete > .content.focused > .box > .value,
 .textfield > .content.active > .box > .value {
     display: none; }
@@ -783,6 +930,9 @@
 .chip-input > .content > .box > .description ~ .chips {
     margin: 2px 8px 2px 36px; }
 
+.chip-input.synthetic > .content > .box > .chips {
+    margin-top: 0px; }
+
 .chip-input > .content.empty > .box > .chips {
     display: none; }
 
@@ -793,6 +943,13 @@
     line-height: 24px;
     margin: 2px 4px 2px 0px; }
 
+.chip-input.synthetic > .content > .box > .chips > .chip {
+    margin: 2px 0px 0px 2px;
+    font-family: var(--overline-font);
+    font-size: var(--overline-size);
+    letter-spacing: var(--overline-letterspacing);
+    font-weight: var(--overline-weight); }
+
 .chip-input > .content > .box > .chips > .chip:last-child {
     margin: 2px 0px; }
 
@@ -800,7 +957,8 @@
     margin: 4px 0px 0px 6px; }
 
 .chip-input > .content > .box > .chips > .chip > .action > i {
-    top: 4px; }
+    top: 4px;
+    cursor: pointer; }
 
 .select-multiple > .content > .box > .chips {
     position: absolute;
@@ -852,6 +1010,15 @@
     bottom: 20px;
     width: calc(var(--inline-width) - 44px); }
 
+.select-multiple.synthetic > .content > .box > .chips {
+    bottom: 16px;
+    left: 4px;
+    width: calc(100% - 36px); }
+
+.select-multiple.synthetic.inline > .content > .box > .chips {
+    left: calc(var(--inline-left) + 4px);
+    width: calc(var(--inline-width) - 40px); }
+
 .select-multiple > .content > .box > .chips > .content {
     position: relative;
     float: left;
@@ -887,9 +1054,9 @@
 * > .content > .box > .line-bordered {
     position: absolute;
     left: 0px; 
-    bottom: 18px; 
     z-index: 1;
-    width: 100%; }
+    width: 100%;
+    bottom: 18px; }
 
 .labelfield > .content > .box > .line-bordered {
     bottom: 4px; }
@@ -902,6 +1069,23 @@
     left: var(--inline-left); 
     width: var(--inline-width); }
 
+*.synthetic > .content > .box > .line-bordered { 
+    bottom: 17px;
+    height: 30px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    box-shadow: inset 0 0 2px 0 var(--background-border);
+    border: 1px solid var(--background-border) !important; }
+
+*.synthetic.inline > .content > .box > .line-bordered { 
+    bottom: 17px; 
+    left: var(--inline-left);
+    width: var(--inline-width); }
+
+.chip-input.synthetic > .content > .box > .line-bordered,
 .filled > .content > .box > .line-bordered,
 .outline > .content > .box > .line-bordered { 
     display: none !important; }
@@ -944,6 +1128,7 @@
          -o-animation: borderTextfieldInline 200ms var(--sharp-curve);
             animation: borderTextfieldInline 200ms var(--sharp-curve); }
 
+*.synthetic > .content > .box > .line-shadow,
 .filled > .content > .box > .line-shadow,
 .outline > .content > .box > .line-shadow { 
     display: none !important; }
@@ -994,6 +1179,14 @@
 
 .autocomplete.outline > .content > .box > i.action + i.action {
     right: 32px; }
+
+*.synthetic > .content > .box > i.action {
+    right: 4px;
+    bottom: 22px; }
+
+*.synthetic.inline > .content > .box > i.action {
+    right: 6px;
+    bottom: 22px; }
 
 .textfield > .content > .box > .checkbox-control {
     position: absolute;
@@ -1061,6 +1254,11 @@
 .select-multiple.outline > .content.label-inactive > .box > button.action { 
     bottom: 22px; }
 
+.select.synthetic > .content > .box > button.action,
+.select-multiple.synthetic > .content > .box > button.action {
+    right: 0px;
+    bottom: 20px; }
+
 * > .content > .box > span {
     position: absolute;
     left: 0;
@@ -1068,10 +1266,10 @@
     width: 100%;
     height: 16px;
     line-height: 16px;
-    font-family: var(--caption-font);
-    font-size: var(--caption-size);
-    letter-spacing: var(--caption-letterspacing);
-    font-weight: var(--caption-weight); }
+    font-family: var(--overline-font);
+    font-size: var(--overline-size);
+    letter-spacing: var(--overline-letterspacing);
+    font-weight: var(--overline-weight); }
 
 *:not(.inline) > .content > .box > .description ~ span {
     left: 36px;
@@ -1090,21 +1288,39 @@
     left: 48px;
     width: calc(100% - 60px); }
 
-.textfield > .content > .box > span.counter {
+*.synthetic > .content > .box > span {
+    left: 6px;
+    width: calc(100% - 12px); }
+
+*.synthetic.inline > .content > .box > span {
+    left: calc(var(--inline-left) + 6px); }
+
+.textfield > .content > .box > span.counter,
+.select-multiple > .content > .box > span.counter {
     width: auto;
     right: 0px !important;
     padding-left: 2px;
     left: initial !important; }
 
-.textfield:not(.inline) > .content > .box > .description ~ span.counter {
+.textfield:not(.inline) > .content > .box > .description ~ span.counter,
+.select-multiple:not(.inline) > .content > .box > .description ~ span.counter {
     width: auto;
     left: initial; }
 
-.textfield.filled > .content > .box > span.counter {
+.textfield.filled > .content > .box > span.counter,
+.select-multiple.filled > .content > .box > span.counter {
     right: 12px !important; }
 
-.textfield.outline > .content > .box > span.counter {
+.textfield.outline > .content > .box > span.counter,
+.select-multiple.outline > .content > .box > span.counter {
     right: 12px !important; }
+
+*.synthetic.inline > .content > .box > span:not(.counter) {
+    width: calc(var(--inline-width) - 12px); }
+
+.textfield.synthetic > .content > .box > span.counter,
+.select-multiple.synthetic > .content > .box > span.counter {
+    right: 6px !important; }
 
 .autocomplete > .content > .box > ul,
 .select > .content > .box > ul,
@@ -1135,6 +1351,17 @@
 .select > .content > .box > ul {
     top: 24px; }
 
+.autocomplete.synthetic > .content > .box > ul, 
+.select.synthetic > .content > .box > ul,
+.select-multiple.synthetic > .content > .box > ul {
+    top: 49px;
+    border-radius: 0px 0px 4px 4px; }
+
+.autocomplete.synthetic.inline > .content > .box > ul, 
+.select.synthetic.inline > .content > .box > ul,
+.select-multiple.synthetic.inline > .content > .box > ul {
+    top: 33px; }
+
 .autocomplete > .content > .box > ul.higher,
 .select > .content > .box > ul.higher,
 .select-multiple > .content > .box > ul.higher {
@@ -1148,6 +1375,12 @@
 
 .select > .content > .box > ul.higher {
     bottom: 18px; }
+
+.autocomplete.synthetic > .content > .box > ul.higher, 
+.select.synthetic > .content > .box > ul.higher, 
+.select-multiple.synthetic > .content > .box > ul.higher {
+    bottom: 47px;
+    border-radius: 4px 4px 0px 0px; }
 
 .autocomplete:not(.inline) > .content > .box > .description ~ ul,
 .select:not(.inline) > .content > .box >  .description ~ ul,
@@ -1555,6 +1788,9 @@
     overflow-y: hidden;
     padding: 8px 0px 11px 0px; }
 
+.textfield-multiline.synthetic > .content {
+    padding: 2px 0px 11px 0px; }
+
 .textfield-multiline > .content.disabled {
     pointer-events: none; }
 
@@ -1570,6 +1806,14 @@
     border-radius: 4px;
     margin-bottom: 5px;
     box-sizing: border-box; }
+
+.textfield-multiline.synthetic > .content > .box { 
+    padding: 0px 1px;
+    margin: 16px 0px 10px 0px;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    box-shadow: inset 0 0 2px 0 var(--background-border);
+    border: 1px solid var(--background-border) !important; }
 
 .textfield-multiline > .content > .box > .description {
     position: absolute;
@@ -1653,6 +1897,9 @@
 .textfield-multiline.outline > .content > .box > label.active {
     top: 12px; }
 
+.textfield-multiline.synthetic > .content > .box > label.active {
+    top: 2px; }
+
 .textfield-multiline > .content > .box > label > span {
     margin-left: 2px; }
 
@@ -1697,6 +1944,11 @@
 .textfield-multiline.outline > .content > .box > .description ~ textarea {
     width: calc(100% - 51px);
     padding: 20px 11px 5px 40px; }
+
+.textfield-multiline.synthetic > .content > .box > textarea {
+    padding: 5px 0px 4px 0px; 
+    margin: 0px 5px;
+    width: calc(100% - 10px); }
 
 .textfield-multiline > .content > .box > textarea::-webkit-input-placeholder {
     visibility: hidden;
@@ -1747,6 +1999,11 @@
     padding-left: 29px;
     width: calc(100% - 53px); }
 
+.textfield-multiline.synthetic > .content > .box > .value {
+    width: calc(100% - 12px);
+    left: 7px;
+    bottom: 26px; }
+
 .textfield-multiline > .content.active > .box > .value {
     display: none; }
 
@@ -1759,6 +2016,7 @@
 .textfield-multiline.filled > .content > .box > .line-bordered {
     display: none !important; }
 
+.textfield-multiline.synthetic > .content > .box > .line-bordered,
 .textfield-multiline.outline > .content > .box > .line-bordered {
     display: none !important; }
 
@@ -1807,10 +2065,10 @@
     width: 100%;
     height: 16px;
     line-height: 16px;
-    font-family: var(--caption-font);
-    font-size: var(--caption-size);
-    letter-spacing: var(--caption-letterspacing);
-    font-weight: var(--caption-weight); }
+    font-family: var(--overline-font);
+    font-size: var(--overline-size);
+    letter-spacing: var(--overline-letterspacing);
+    font-weight: var(--overline-weight); }
 
 .textfield-multiline > .content > .box > .description ~ span {
     left: 40px;
@@ -1839,6 +2097,9 @@
 
 .textfield-multiline.outline > .content > .box > span.counter {
     right: 12px !important; }
+
+.textfield-multiline.synthetic > .content > .box > span.counter {
+    right: 6px !important; }
 
 .textfield-multiline > .content > .box > .textarea-hidden {
     position: absolute;
@@ -1869,6 +2130,9 @@
 
 .textfield-multiline.outline > .content > .box > .description ~ .textarea-hidden {
     width: calc(100% - 52px); }
+
+.textfield-multiline.synthetic > .content > .box > .textarea-hidden {
+    width: calc(100% - 12px); }
 
 .textfield-multiline.align-center > .content > .box > textarea,
 .textfield-multiline.align-center > .content > .box > .value,
