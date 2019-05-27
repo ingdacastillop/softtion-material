@@ -543,6 +543,12 @@ body.body-overflow-none-sidenav > .app-body > .app-content {
     font-size: 24px;
     user-select: none; }
 
+.control-cell > .avatar {
+    margin: 6px 4px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px; }
+
 .avatar.actionable {
     cursor: pointer; }
 
@@ -573,6 +579,9 @@ body.body-overflow-none-sidenav > .app-body > .app-content {
 
 .avatar > i {
     font-size: 24px; }
+
+.control-cell > .avatar > i {
+    font-size: 20px; }
 
 .avatar > img {
     border-radius: 50%; }
@@ -2637,6 +2646,9 @@ button.raised:focus:after, button.flat:focus:after {
     border-radius: 4px;
     overflow: hidden;
     box-shadow: var(--shadow-2); }
+
+.datatable.bordered {
+    box-sizing: border-box; }
 
 .datatable > .header {
     position: relative;

@@ -150,6 +150,8 @@
 
                 Switch: Directives.create(Directives.Switch),
 
+                Tab: Directives.create(Directives.Tab),
+                
                 Tabs: Directives.create(Directives.Tabs),
 
                 TextField: Directives.create(Directives.TextField),
@@ -343,6 +345,7 @@
             case (Directives.Slider.NAME): return Directives.Slider;
             case (Directives.StepperHorizontal.NAME): return Directives.StepperHorizontal;
             case (Directives.Switch.NAME): return Directives.Switch;
+            case (Directives.Tab.NAME): return Directives.Tab;
             case (Directives.Tabs.NAME): return Directives.Tabs;
             case (Directives.TextField.NAME): return Directives.TextField;
             case (Directives.TextFieldMultiline.NAME): return Directives.TextFieldMultiline;
@@ -7672,6 +7675,54 @@
                     
                     listener.launch(Listeners.CLICK, { $event: $event });
                 };
+            }
+        };
+    }
+    
+    // Directiva: Tab
+    // Version: 1.0.0
+    // Update: 23/May/2019
+    
+    Directives.Tab = TabDirective;
+    
+    Directives.Tab.NAME = "Tab";
+    Directives.Tab.VERSION = "1.0.0";
+    Directives.Tab.KEY = "tab";
+    
+    Directives.Tab.$inject = [];
+    
+    function TabDirective() {
+        return {
+            restrict: "C",
+            scope: {
+                ngDisabled: "=?",
+                ngModel: "=?",
+                ngValue: "=?",
+                ngListener: "&"
+            },
+            link: function ($scope, $element) {
+                
+                $scope.$watch(function () { return $scope.ngModel; }, 
+                    function (newValue) {
+                        if (softtion.isUndefined($scope.ngModel)) {
+                            $element.removeClass(Classes.ACTIVE);
+                        } else if (newValue === $scope.ngValue) {
+                            $element.addClass(Classes.ACTIVE);
+                        } else {
+                            $element.removeClass(Classes.ACTIVE);
+                        }
+                    });
+                    
+                $scope.$watch(function () { return $scope.ngDisabled; }, 
+                    function (newValue) {
+                        (!newValue) ? 
+                            $element.removeClass(Classes.DISABLED) :
+                            $element.addClass(Classes.DISABLED);
+                    });
+                    
+                $element.click(function () {
+                    $scope.$apply(function () { $scope.ngModel = $scope.ngValue; });
+                });
             }
         };
     }
