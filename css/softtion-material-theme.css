@@ -2045,7 +2045,8 @@ button.floating.theme-material:before {
 .search-box {
     background-color: var(--background-component); }
 
-.datatable.theme-material > .header > .search-box.contrast {
+.datatable.theme-material > .header > .search-box.contrast,
+.toolbar.theme-material > .search-box.contrast {
     background-color: var(--theme-material-200); }
 
 .app-bar.floating > .search-box {
@@ -2064,13 +2065,15 @@ button.floating.theme-material:before {
 .search-box > input {
     color: var(--primary-font); }
 
-.datatable.theme-material > .header >.search-box.contrast > input {
+.datatable.theme-material > .header >.search-box.contrast > input,
+.toolbar.theme-material > search-box.contrast > input {
     color: var(--theme-material-font-primary-200); }
 
 .search-box > input::-webkit-input-placeholder {
     color: var(--secondary-font); }
 
-.datatable.theme-material .header .search-box.contrast input::-webkit-input-placeholder {
+.datatable.theme-material .header .search-box.contrast input::-webkit-input-placeholder,
+.toolbar.theme-material .search-box.contrast input::-webkit-input-placeholder {
     color: var(--theme-material-font-secondary-200); }
 
 .search-box > input::selection {
@@ -2080,13 +2083,16 @@ button.floating.theme-material:before {
 .search-box > .actions {
     background-color: transparent; }
 
-.datatable.theme-material .search-box.contrast button.action {
+.datatable.theme-material .search-box.contrast button.action,
+.toolbar.theme-material .search-box.contrast button.action {
     color: var(--theme-material-font-secondary-200); }
 
-.datatable.theme-material .search-box.contrast button.action:before {
+.datatable.theme-material .search-box.contrast button.action:before,
+.toolbar.theme-material .search-box.contrast button.action:before {
     color: var(--theme-material-ripple-200); }
 
-.datatable.theme-material .search-box.contrast button.action:disabled {
+.datatable.theme-material .search-box.contrast button.action:disabled,
+.toolbar.theme-material .search-box.contrast button.action:disabled {
     color: var(--theme-material-font-disabled-200); }
 
 /** SIDENAV */
