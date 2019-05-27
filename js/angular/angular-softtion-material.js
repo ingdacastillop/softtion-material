@@ -150,7 +150,7 @@
 
                 Switch: Directives.create(Directives.Switch),
 
-                Tabs: Directives.create(Directives.Tabs),
+                Tab: Directives.create(Directives.Tab),
 
                 TextField: Directives.create(Directives.TextField),
 
@@ -343,7 +343,7 @@
             case (Directives.Slider.NAME): return Directives.Slider;
             case (Directives.StepperHorizontal.NAME): return Directives.StepperHorizontal;
             case (Directives.Switch.NAME): return Directives.Switch;
-            case (Directives.Tabs.NAME): return Directives.Tabs;
+            case (Directives.Tab.NAME): return Directives.Tab;
             case (Directives.TextField.NAME): return Directives.TextField;
             case (Directives.TextFieldMultiline.NAME): return Directives.TextFieldMultiline;
             case (Directives.TextFieldReadonly.NAME): return Directives.TextFieldReadonly;
@@ -7677,121 +7677,50 @@
         };
     }
     
-    // Directiva: Tabs
-    // Version: 1.0.5
-    // Update: 27/Feb/2018
+    // Directiva: Tab
+    // Version: 1.0.0
+    // Update: 23/May/2019
     
-    Directives.Tabs = TabsDirective;
+    Directives.Tab = TabDirective;
     
-    Directives.Tabs.NAME = "Tabs";
-    Directives.Tabs.VERSION = "1.0.5";
-    Directives.Tabs.KEY = "tabs";
+    Directives.Tab.NAME = "Tab";
+    Directives.Tab.VERSION = "1.0.0";
+    Directives.Tab.KEY = "tab";
     
-    Directives.Tabs.$inject = ["$timeout"];
+    Directives.Tab.$inject = [];
     
-    function TabsDirective($timeout) {
+    function TabDirective() {
         return {
             restrict: "C",
             scope: {
-                elementScroll: "@",
-                ngListener: "&",
-                disabledOverflow: "=?",
-                positionScroll: "=?",
-                disabledPositionStart: "=?"
+                ngModel: "=?",
+                ngValue: "=?",
+                ngDisabled: "=?",
+                ngListener: "&"
             },
             link: function ($scope, $element) {
-                    // Componentes
-                var tabs = $element.find(".tab"), elementScroll,
-                    stripe = softtion.htmlElement("div", "stripe");
-                    
-                    // Atributos
-                var clickActive = true, positionStart;
-
-                $element.append(stripe); // Agregando componente
                 
-                $scope.elementScroll = $scope.elementScroll || ".app-content";
-                elementScroll = angular.element($scope.elementScroll);
-
-                init(); // Iniciando componente
-
-                $element.displaceLeft((name, event) => {
-                    switch (name) {
-                        case ("start"):
-                            positionStart = event.originalEvent.pageX;
-                        break;
-
-                        case ("displace"): 
-                            var position = event.originalEvent.pageX - positionStart,
-                                disabledClick = !softtion.isBetween(position, -15, 15);
-
-                            if (disabledClick) clickActive = false;
-                        break;
-
-                        case ("end"): 
-                            $timeout(() => { clickActive = true; }, 100);
-                        break;
-                    }
-                }); 
-
-                tabs.on("click.tabs", ($event) => {
-                    if (!clickActive) { clickActive = true; return; } // Arrastre
-
-                    var tab = angular.element($event.currentTarget),
-                        position = tab.data("position");
-
-                    if (tab.hasClass(Classes.ACTIVE)) return; // Esta activo
-
-                    var attrs = getAttrsTab(tab); $element.addClass(Classes.ACTIVE);
-                    
-                    if ($element.hasClass(Classes.ALTERNATIVE))
-                        attrs.left = attrs.left + 1; // Ajustando posición
-                    
-                    stripe.css({ width: attrs.width, left: attrs.left });
-                    tabs.removeClass(Classes.ACTIVE); tab.addClass(Classes.ACTIVE);
-
-                    if (!$scope.disabledPositionStart) {
-                        if (!isNaN($scope.positionScroll) && 
-                            ($scope.positionScroll < elementScroll.scrollTop())) {
-                            elementScroll.scrollTop($scope.positionScroll); 
-                        } // Reposicionando scroll
-                    } // No es necesario reposicionar scroll de elemento establecido
-
-                    if (attrs.left < $element.scrollLeft() || (attrs.width + attrs.left) > $element.width())
-                        $element.animate({ scrollLeft: attrs.left }, 175, "standardCurve"); // Reubicando
-                    
-                    if (position === 0) 
-                        $element.animate({ scrollLeft: 0 }, 175, "standardCurve"); // Reubicando
-                });
-                
-                function init() {
-                    var position = 0, tab; // Atributos de la directiva
-                    
-                    angular.forEach(tabs, (element) => {
-                        var tabElement = angular.element(element); // Elemento
-                        
-                        tabElement.data("position", position); position++;
-                        
-                        if (softtion.isUndefined(tab) && tabElement.hasClass(Classes.ACTIVE)) 
-                            tab = tabElement; // Elemento activo
+                $scope.$watch(() => { return $scope.ngModel; }, 
+                    (newValue) => {
+                        if (softtion.isUndefined($scope.ngModel)) {
+                            $element.removeClass(Classes.ACTIVE);
+                        } else if (newValue === $scope.ngValue) {
+                            $element.addClass(Classes.ACTIVE);
+                        } else {
+                            $element.removeClass(Classes.ACTIVE);
+                        }
                     });
                     
-                    tabs.removeClass(Classes.ACTIVE).attr("tabindex", "-1");
-
-                    if (softtion.isUndefined(tab)) tab = angular.element(tabs[0]);
-
-                    tab.addClass(Classes.ACTIVE); position = tab.data("position");
-
-                    var attrs = getAttrsTab(tab), width = attrs.width - 3,
-                        left = attrs.left - (1 + position * 2);
-                
-                    stripe.css({ width: width, left: left }); // Stripe Inicio
-                }
-                
-                function getAttrsTab(tab) {
-                    return {
-                        left: tab[0].offsetLeft, width: tab[0].clientWidth
-                    };
-                }
+                $scope.$watch(() => { return $scope.ngDisabled; }, 
+                    (newValue) => {
+                        (!newValue) ? 
+                            $element.removeClass(Classes.DISABLED) :
+                            $element.addClass(Classes.DISABLED);
+                    });
+                    
+                $element.click(() => {
+                    $scope.$apply(() => { $scope.ngModel = $scope.ngValue; });
+                });
             }
         };
     }

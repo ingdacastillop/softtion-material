@@ -777,6 +777,8 @@
                 }
 
                 function createCalendarMonth() {
+                    if (softtion.isUndefined($scope.manager)) return;
+                    
                     var countDay = 1, firstWeek = $scope.calendarMonth[0],
                         daysMonth = $scope.daysMonth[$scope.month];
 
@@ -784,8 +786,7 @@
                         daysMonth++; // El mes es Febrero y el año es biciesto
 
                     for (var i = $scope.date.getDay(); i < 7; i++) {
-                        var events = $scope.manager.
-                                getEvenstOfDay($scope.year, $scope.month, countDay);
+                        var events = $scope.manager.getEvenstOfDay($scope.year, $scope.month, countDay);
 
                         firstWeek[i] = { number: countDay, events: events }; countDay++;
                     } // Cargando dias hábiles de la primera Semana
@@ -794,8 +795,7 @@
 
                     while (!stop) {
                         var week = $scope.calendarMonth[weekCount],
-                            events = $scope.manager.
-                                getEvenstOfDay($scope.year, $scope.month, countDay);
+                            events = $scope.manager.getEvenstOfDay($scope.year, $scope.month, countDay);
 
                         week[dayWeek] = { number: countDay, events: events }; 
                         countDay++; dayWeek++; // Aumentando

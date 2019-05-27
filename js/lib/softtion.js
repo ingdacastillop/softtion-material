@@ -1108,6 +1108,10 @@ class ColorMaterial {
             formato = formato.replace(
                 "dw", Softtion.MANAGER_DATETIME.DAYS_OF_WEEK[this.getDay()]
             ); // Número del día de la fecha
+
+            formato = formato.replace(
+                "dx", Softtion.MANAGER_DATETIME.DAYS_OF_WEEK_MIN[this.getDay()]
+            ); // Número del día de la fecha
         
             formato = formato.replace(
                 "mm", softtion.leadingCharBefore((this.getMonth() + 1), "0", 2)
