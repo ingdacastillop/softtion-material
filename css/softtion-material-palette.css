@@ -583,3 +583,219 @@
     --theme-material-ripple-800  : var(--theme-tm6-ripple-800);
     --theme-material-ripple-900  : var(--theme-tm6-ripple-900);
 }
+
+.tm7 {
+    --theme-material-50    : var(--theme-tm7-50);
+    --theme-material-100   : var(--theme-tm7-100);
+    --theme-material-200   : var(--theme-tm7-200);
+    --theme-material-300   : var(--theme-tm7-300);
+    --theme-material-400   : var(--theme-tm7-400);
+    --theme-material-500   : var(--theme-tm7-500);
+    --theme-material-600   : var(--theme-tm7-600);
+    --theme-material-700   : var(--theme-tm7-700);
+    --theme-material-800   : var(--theme-tm7-800);
+    --theme-material-900   : var(--theme-tm7-900);
+    
+    --theme-material-font-primary-50   : var(--theme-tm7-font-primary-50);
+    --theme-material-font-primary-100  : var(--theme-tm7-font-primary-100);
+    --theme-material-font-primary-200  : var(--theme-tm7-font-primary-200);
+    --theme-material-font-primary-300  : var(--theme-tm7-font-primary-300);
+    --theme-material-font-primary-400  : var(--theme-tm7-font-primary-400);
+    --theme-material-font-primary-500  : var(--theme-tm7-font-primary-500);
+    --theme-material-font-primary-600  : var(--theme-tm7-font-primary-600);
+    --theme-material-font-primary-700  : var(--theme-tm7-font-primary-700);
+    --theme-material-font-primary-800  : var(--theme-tm7-font-primary-800);
+    --theme-material-font-primary-900  : var(--theme-tm7-font-primary-900);
+    
+    --theme-material-font-secondary-50   : var(--theme-tm7-font-secondary-50);
+    --theme-material-font-secondary-100  : var(--theme-tm7-font-secondary-100);
+    --theme-material-font-secondary-200  : var(--theme-tm7-font-secondary-200);
+    --theme-material-font-secondary-300  : var(--theme-tm7-font-secondary-300);
+    --theme-material-font-secondary-400  : var(--theme-tm7-font-secondary-400);
+    --theme-material-font-secondary-500  : var(--theme-tm7-font-secondary-500);
+    --theme-material-font-secondary-600  : var(--theme-tm7-font-secondary-600);
+    --theme-material-font-secondary-700  : var(--theme-tm7-font-secondary-700);
+    --theme-material-font-secondary-800  : var(--theme-tm7-font-secondary-800);
+    --theme-material-font-secondary-900  : var(--theme-tm7-font-secondary-900);
+    
+    --theme-material-font-disabled-50   : var(--theme-tm7-font-disabled-50);
+    --theme-material-font-disabled-100  : var(--theme-tm7-font-disabled-100);
+    --theme-material-font-disabled-200  : var(--theme-tm7-font-disabled-200);
+    --theme-material-font-disabled-300  : var(--theme-tm7-font-disabled-300);
+    --theme-material-font-disabled-400  : var(--theme-tm7-font-disabled-400);
+    --theme-material-font-disabled-500  : var(--theme-tm7-font-disabled-500);
+    --theme-material-font-disabled-600  : var(--theme-tm7-font-disabled-600);
+    --theme-material-font-disabled-700  : var(--theme-tm7-font-disabled-700);
+    --theme-material-font-disabled-800  : var(--theme-tm7-font-disabled-800);
+    --theme-material-font-disabled-900  : var(--theme-tm7-font-disabled-900);
+    
+    --theme-material-border    : var(--theme-tm7-border);
+    
+    --theme-material-border-50   : var(--theme-tm7-border-50);
+    --theme-material-border-100  : var(--theme-tm7-border-100);
+    --theme-material-border-200  : var(--theme-tm7-border-200);
+    --theme-material-border-300  : var(--theme-tm7-border-300);
+    --theme-material-border-400  : var(--theme-tm7-border-400);
+    --theme-material-border-500  : var(--theme-tm7-border-500);
+    --theme-material-border-600  : var(--theme-tm7-border-600);
+    --theme-material-border-700  : var(--theme-tm7-border-700);
+    --theme-material-border-800  : var(--theme-tm7-border-800);
+    --theme-material-border-900  : var(--theme-tm7-border-900);
+    
+    --theme-material-ripple    : var(--theme-tm7-ripple);
+    
+    --theme-material-ripple-50   : var(--theme-tm7-ripple-50);
+    --theme-material-ripple-100  : var(--theme-tm7-ripple-100);
+    --theme-material-ripple-200  : var(--theme-tm7-ripple-200);
+    --theme-material-ripple-300  : var(--theme-tm7-ripple-300);
+    --theme-material-ripple-400  : var(--theme-tm7-ripple-400);
+    --theme-material-ripple-500  : var(--theme-tm7-ripple-500);
+    --theme-material-ripple-600  : var(--theme-tm7-ripple-600);
+    --theme-material-ripple-700  : var(--theme-tm7-ripple-700);
+    --theme-material-ripple-800  : var(--theme-tm7-ripple-800);
+    --theme-material-ripple-900  : var(--theme-tm7-ripple-900);
+}
+
+.tm8 {
+    --theme-material-50    : var(--theme-tm8-50);
+    --theme-material-100   : var(--theme-tm8-100);
+    --theme-material-200   : var(--theme-tm8-200);
+    --theme-material-300   : var(--theme-tm8-300);
+    --theme-material-400   : var(--theme-tm8-400);
+    --theme-material-500   : var(--theme-tm8-500);
+    --theme-material-600   : var(--theme-tm8-600);
+    --theme-material-700   : var(--theme-tm8-700);
+    --theme-material-800   : var(--theme-tm8-800);
+    --theme-material-900   : var(--theme-tm8-900);
+    
+    --theme-material-font-primary-50   : var(--theme-tm8-font-primary-50);
+    --theme-material-font-primary-100  : var(--theme-tm8-font-primary-100);
+    --theme-material-font-primary-200  : var(--theme-tm8-font-primary-200);
+    --theme-material-font-primary-300  : var(--theme-tm8-font-primary-300);
+    --theme-material-font-primary-400  : var(--theme-tm8-font-primary-400);
+    --theme-material-font-primary-500  : var(--theme-tm8-font-primary-500);
+    --theme-material-font-primary-600  : var(--theme-tm8-font-primary-600);
+    --theme-material-font-primary-700  : var(--theme-tm8-font-primary-700);
+    --theme-material-font-primary-800  : var(--theme-tm8-font-primary-800);
+    --theme-material-font-primary-900  : var(--theme-tm8-font-primary-900);
+    
+    --theme-material-font-secondary-50   : var(--theme-tm8-font-secondary-50);
+    --theme-material-font-secondary-100  : var(--theme-tm8-font-secondary-100);
+    --theme-material-font-secondary-200  : var(--theme-tm8-font-secondary-200);
+    --theme-material-font-secondary-300  : var(--theme-tm8-font-secondary-300);
+    --theme-material-font-secondary-400  : var(--theme-tm8-font-secondary-400);
+    --theme-material-font-secondary-500  : var(--theme-tm8-font-secondary-500);
+    --theme-material-font-secondary-600  : var(--theme-tm8-font-secondary-600);
+    --theme-material-font-secondary-700  : var(--theme-tm8-font-secondary-700);
+    --theme-material-font-secondary-800  : var(--theme-tm8-font-secondary-800);
+    --theme-material-font-secondary-900  : var(--theme-tm8-font-secondary-900);
+    
+    --theme-material-font-disabled-50   : var(--theme-tm8-font-disabled-50);
+    --theme-material-font-disabled-100  : var(--theme-tm8-font-disabled-100);
+    --theme-material-font-disabled-200  : var(--theme-tm8-font-disabled-200);
+    --theme-material-font-disabled-300  : var(--theme-tm8-font-disabled-300);
+    --theme-material-font-disabled-400  : var(--theme-tm8-font-disabled-400);
+    --theme-material-font-disabled-500  : var(--theme-tm8-font-disabled-500);
+    --theme-material-font-disabled-600  : var(--theme-tm8-font-disabled-600);
+    --theme-material-font-disabled-700  : var(--theme-tm8-font-disabled-700);
+    --theme-material-font-disabled-800  : var(--theme-tm8-font-disabled-800);
+    --theme-material-font-disabled-900  : var(--theme-tm8-font-disabled-900);
+    
+    --theme-material-border    : var(--theme-tm8-border);
+    
+    --theme-material-border-50   : var(--theme-tm8-border-50);
+    --theme-material-border-100  : var(--theme-tm8-border-100);
+    --theme-material-border-200  : var(--theme-tm8-border-200);
+    --theme-material-border-300  : var(--theme-tm8-border-300);
+    --theme-material-border-400  : var(--theme-tm8-border-400);
+    --theme-material-border-500  : var(--theme-tm8-border-500);
+    --theme-material-border-600  : var(--theme-tm8-border-600);
+    --theme-material-border-700  : var(--theme-tm8-border-700);
+    --theme-material-border-800  : var(--theme-tm8-border-800);
+    --theme-material-border-900  : var(--theme-tm8-border-900);
+    
+    --theme-material-ripple    : var(--theme-tm8-ripple);
+    
+    --theme-material-ripple-50   : var(--theme-tm8-ripple-50);
+    --theme-material-ripple-100  : var(--theme-tm8-ripple-100);
+    --theme-material-ripple-200  : var(--theme-tm8-ripple-200);
+    --theme-material-ripple-300  : var(--theme-tm8-ripple-300);
+    --theme-material-ripple-400  : var(--theme-tm8-ripple-400);
+    --theme-material-ripple-500  : var(--theme-tm8-ripple-500);
+    --theme-material-ripple-600  : var(--theme-tm8-ripple-600);
+    --theme-material-ripple-700  : var(--theme-tm8-ripple-700);
+    --theme-material-ripple-800  : var(--theme-tm8-ripple-800);
+    --theme-material-ripple-900  : var(--theme-tm8-ripple-900);
+}
+
+.tm9 {
+    --theme-material-50    : var(--theme-tm9-50);
+    --theme-material-100   : var(--theme-tm9-100);
+    --theme-material-200   : var(--theme-tm9-200);
+    --theme-material-300   : var(--theme-tm9-300);
+    --theme-material-400   : var(--theme-tm9-400);
+    --theme-material-500   : var(--theme-tm9-500);
+    --theme-material-600   : var(--theme-tm9-600);
+    --theme-material-700   : var(--theme-tm9-700);
+    --theme-material-800   : var(--theme-tm9-800);
+    --theme-material-900   : var(--theme-tm9-900);
+    
+    --theme-material-font-primary-50   : var(--theme-tm9-font-primary-50);
+    --theme-material-font-primary-100  : var(--theme-tm9-font-primary-100);
+    --theme-material-font-primary-200  : var(--theme-tm9-font-primary-200);
+    --theme-material-font-primary-300  : var(--theme-tm9-font-primary-300);
+    --theme-material-font-primary-400  : var(--theme-tm9-font-primary-400);
+    --theme-material-font-primary-500  : var(--theme-tm9-font-primary-500);
+    --theme-material-font-primary-600  : var(--theme-tm9-font-primary-600);
+    --theme-material-font-primary-700  : var(--theme-tm9-font-primary-700);
+    --theme-material-font-primary-800  : var(--theme-tm9-font-primary-800);
+    --theme-material-font-primary-900  : var(--theme-tm9-font-primary-900);
+    
+    --theme-material-font-secondary-50   : var(--theme-tm9-font-secondary-50);
+    --theme-material-font-secondary-100  : var(--theme-tm9-font-secondary-100);
+    --theme-material-font-secondary-200  : var(--theme-tm9-font-secondary-200);
+    --theme-material-font-secondary-300  : var(--theme-tm9-font-secondary-300);
+    --theme-material-font-secondary-400  : var(--theme-tm9-font-secondary-400);
+    --theme-material-font-secondary-500  : var(--theme-tm9-font-secondary-500);
+    --theme-material-font-secondary-600  : var(--theme-tm9-font-secondary-600);
+    --theme-material-font-secondary-700  : var(--theme-tm9-font-secondary-700);
+    --theme-material-font-secondary-800  : var(--theme-tm9-font-secondary-800);
+    --theme-material-font-secondary-900  : var(--theme-tm9-font-secondary-900);
+    
+    --theme-material-font-disabled-50   : var(--theme-tm9-font-disabled-50);
+    --theme-material-font-disabled-100  : var(--theme-tm9-font-disabled-100);
+    --theme-material-font-disabled-200  : var(--theme-tm9-font-disabled-200);
+    --theme-material-font-disabled-300  : var(--theme-tm9-font-disabled-300);
+    --theme-material-font-disabled-400  : var(--theme-tm9-font-disabled-400);
+    --theme-material-font-disabled-500  : var(--theme-tm9-font-disabled-500);
+    --theme-material-font-disabled-600  : var(--theme-tm9-font-disabled-600);
+    --theme-material-font-disabled-700  : var(--theme-tm9-font-disabled-700);
+    --theme-material-font-disabled-800  : var(--theme-tm9-font-disabled-800);
+    --theme-material-font-disabled-900  : var(--theme-tm9-font-disabled-900);
+    
+    --theme-material-border    : var(--theme-tm9-border);
+    
+    --theme-material-border-50   : var(--theme-tm9-border-50);
+    --theme-material-border-100  : var(--theme-tm9-border-100);
+    --theme-material-border-200  : var(--theme-tm9-border-200);
+    --theme-material-border-300  : var(--theme-tm9-border-300);
+    --theme-material-border-400  : var(--theme-tm9-border-400);
+    --theme-material-border-500  : var(--theme-tm9-border-500);
+    --theme-material-border-600  : var(--theme-tm9-border-600);
+    --theme-material-border-700  : var(--theme-tm9-border-700);
+    --theme-material-border-800  : var(--theme-tm9-border-800);
+    --theme-material-border-900  : var(--theme-tm9-border-900);
+    
+    --theme-material-ripple    : var(--theme-tm9-ripple);
+    
+    --theme-material-ripple-50   : var(--theme-tm9-ripple-50);
+    --theme-material-ripple-100  : var(--theme-tm9-ripple-100);
+    --theme-material-ripple-200  : var(--theme-tm9-ripple-200);
+    --theme-material-ripple-300  : var(--theme-tm9-ripple-300);
+    --theme-material-ripple-400  : var(--theme-tm9-ripple-400);
+    --theme-material-ripple-500  : var(--theme-tm9-ripple-500);
+    --theme-material-ripple-600  : var(--theme-tm9-ripple-600);
+    --theme-material-ripple-700  : var(--theme-tm9-ripple-700);
+    --theme-material-ripple-800  : var(--theme-tm9-ripple-800);
+    --theme-material-ripple-900  : var(--theme-tm9-ripple-900);
+}

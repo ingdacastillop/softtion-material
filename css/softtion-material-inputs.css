@@ -865,7 +865,7 @@
     width: calc(var(--inline-width) - var(--inline-width-lower-value) - 12px); }
 
 .autocomplete > .content.focused > .box > .value,
-.textfield > .content.active > .box > .value {
+.textfield > .content.active:not(.password) > .box > .value {
     display: none; }
 
 .autocomplete > .content > .box > .unique-selection {

@@ -2168,10 +2168,10 @@ button.floating.theme-material:before {
     background-color: var(--background-hover); }
 
 .sidenav.theme-material > .content .sidenav-item > .description > a {
-    color: var(--theme-material-100); }
+    color: var(--theme-material-font-primary-700); }
 
 .sidenav.theme-material > .content .sidenav-item.disabled > .description > a {
-    color: var(--theme-material-50); }
+    color: var(--theme-material-font-disabled-700); }
 
 .sidenav.theme-material > .content .sidenav-item > .description > a:hover {
     background-color: var(--theme-material-700); }
@@ -3136,13 +3136,13 @@ input:-webkit-autofill {
 
 .autocomplete > .content > .box > input:focus,
 .chip-input > .content > .box > input:focus,
-.textfield > .content > .box > input:focus,
+.textfield > .content:not(.password) > .box > input:focus,
 .textfield-readonly > .content > .box > input {
     color: var(--primary-font); }
 
 .theme-material .autocomplete.contrast > .content > .box > input:focus,
 .theme-material .chip-input.contrast > .content > .box > input:focus,
-.theme-material .textfield.contrast > .content > .box > input:focus,
+.theme-material .textfield.contrast:not(.password) > .content > .box > input:focus,
 .theme-material .textfield-readonly.contrast > .content > .box > input {
     color: var(--theme-material-font-primary-500); }
 
@@ -3152,6 +3152,10 @@ input:-webkit-autofill {
 .textfield-readonly > .content > .box > input::selection {
     color: var(--theme-material-font-primary-500);
     background-color: var(--theme-material-500); }
+
+.textfield > .content.password > .box > input::selection {
+    color: transparent;
+    background-color: transparent; }
 
 .autocomplete > .content > .box > input::-webkit-input-placeholder,
 .chip-input > .content > .box > input::-webkit-input-placeholder,

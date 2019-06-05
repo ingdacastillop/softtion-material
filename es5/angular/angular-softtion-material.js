@@ -2287,12 +2287,13 @@
                 $scope.clickLabel = function ($event) { 
                     if ($scope.stopPropagation) $event.stopPropagation();
                     
-                    if ($scope.ngReadonly) return; // Solo léctura
-                    
                     if ($scope.ngDisabled) return; // Inactivo
+                    
+                    listener.launch(Listeners.CLICK, { $event: $event });
+                    
+                    if ($scope.ngReadonly) return; // Solo léctura
 
                     $scope.checked = !$scope.checked; input.focus();
-                    listener.launch(Listeners.CLICK, { $event: $event });
                 };
             }
         };
@@ -7863,7 +7864,8 @@
         var content = softtion.html("div").addClass("content").
             addAttribute("ng-class",
                 "{active: inputActive, \"label-inactive\": !isLabel," +
-                " disabled: ngDisabled, \"icon-action\": isIconAction || checkboxActive}"
+                " disabled: ngDisabled, password: isPasswordField()," +
+                " \"icon-action\": isIconAction || checkboxActive}"
             ).addChildren(box);
         
         var description = softtion.html("div").addClass("description").
@@ -7884,6 +7886,7 @@
                 addAttribute("type", "{{typeInput}}").
                 addAttribute("autocomplete", "{{autocompleteValue}}").
                 addAttribute("ng-model", "input").
+                addAttribute("name", "{{ngName}}").
                 addAttribute("ng-click", "clickInput($event)").
                 addAttribute("ng-blur", "blurInput($event)").
                 addAttribute("ng-focus", "focusInput($event)").
@@ -7951,6 +7954,7 @@
                 ngModel: "=", 
                 label: "@", 
                 type: "@",
+                ngName: "@",
                 autocomplete: "=?",
                 required: "=?",
                 optional: "=?",
@@ -7995,10 +7999,10 @@
         var box = softtion.html("div").addClass("box");
         
         var content = softtion.html("div").addClass("content").
-            addAttribute("ng-class",
-                "{active: areaActive, \"label-inactive\": !isLabel," +
-                " disabled: ngDisabled, \"icon-action\": isIconAction || checkboxActive}"
-            ).addChildren(box);
+                addAttribute("ng-class",
+                    "{active: areaActive, \"label-inactive\": !isLabel," +
+                    " disabled: ngDisabled, \"icon-action\": isIconAction || checkboxActive}"
+                ).addChildren(box);
         
         var description = softtion.html("div").addClass("description").
                 addAttribute("ng-click", "clickIconDescription($event)").
@@ -8015,50 +8019,50 @@
                 );
 
         var textArea = softtion.html("textarea").
-            addAttribute("ng-model", "area").
-            addAttribute("autocomplete", "off").
-            addAttribute("ng-click", "clickArea($event)").
-            addAttribute("ng-blur", "blurArea($event)").
-            addAttribute("ng-focus", "focusArea($event)").
-            addAttribute("ng-keydown", "keydownArea($event)").
-            addAttribute("ng-keyup", "keyupArea($event)").
-            addAttribute("ng-readonly", "ngReadonly").
-            addAttribute("ng-disabled", "ngDisabled").
-            addAttribute("ng-trim", "ngTrim").
-            addAttribute("ng-paste", "pasteArea($event)").
-            addAttribute("focused-element", "focusedArea").
-            addAttribute("style", "{{heightStyle()}}").
-            addAttribute("placeholder", "{{placeholder}}");
+                addAttribute("ng-model", "area").
+                addAttribute("autocomplete", "off").
+                addAttribute("ng-click", "clickArea($event)").
+                addAttribute("ng-blur", "blurArea($event)").
+                addAttribute("ng-focus", "focusArea($event)").
+                addAttribute("ng-keydown", "keydownArea($event)").
+                addAttribute("ng-keyup", "keyupArea($event)").
+                addAttribute("ng-readonly", "ngReadonly").
+                addAttribute("ng-disabled", "ngDisabled").
+                addAttribute("ng-trim", "ngTrim").
+                addAttribute("ng-paste", "pasteArea($event)").
+                addAttribute("focused-element", "focusedArea").
+                addAttribute("style", "{{heightStyle()}}").
+                addAttribute("placeholder", "{{placeholder}}");
 
         var lineBordered = softtion.html("div").addClass("line-bordered");
         var lineShadow = softtion.html("div").addClass("line-shadow");
 
         var label = softtion.html("label").setText("{{label}}").
-            addAttribute("ng-click", "clickLabel($event)").
-            addAttribute("ng-class", "{active: isActiveLabel()}").
-            addChildren(
-                softtion.html("span").setText("*").addAttribute("ng-if", "required")
-            ).addChildren(
-                softtion.html("span").addClass("optional").
-                    setText("(opcional)").addAttribute("ng-if", "optional")
-            );
+                addAttribute("ng-click", "clickLabel($event)").
+                addAttribute("ng-class", "{active: isActiveLabel()}").
+                addChildren(
+                    softtion.html("span").setText("*").addAttribute("ng-if", "required")
+                ).addChildren(
+                    softtion.html("span").addClass("optional").
+                        setText("(opcional)").addAttribute("ng-if", "optional")
+                );
 
         var value = softtion.html("p").addClass(["value"]).
-            setText("{{getValueModel()}}").
-            addAttribute("ng-click", "clickLabel($event)").
-            addAttribute("ng-class", "{\"holder-active\": isHolderActive()}");
+                setText("{{getValueModel()}}").
+                addAttribute("ng-click", "clickLabel($event)").
+                addAttribute("ng-class", "{\"holder-active\": isHolderActive()}");
 
         var spanError = softtion.html("span").addClass(["error", "truncate"]).
-            setText("{{errorText}}").addAttribute("ng-hide", "!errorActive");
+                setText("{{errorText}}").addAttribute("ng-hide", "!errorActive");
 
         var spanHelper = softtion.html("span").addClass(["help", "truncate"]).
-            setText("{{helperText}}").addAttribute("ng-hide", "hideHelperText()");
+                setText("{{helperText}}").addAttribute("ng-hide", "hideHelperText()");
 
         var spanCounter = softtion.html("span").addClass(["counter", "truncate"]).
-            setText("{{textCounter()}}").addAttribute("ng-if", "isCounterAllowed()");
+                setText("{{textCounter()}}").addAttribute("ng-if", "isCounterAllowed()");
 
         var textHidden = softtion.html("div").
-            addClass("textarea-hidden").setText("{{valueHidden}}");
+                addClass("textarea-hidden").setText("{{valueHidden}}");
 
         box.addChildren(description).addChildren(value).
             addChildren(textArea).addChildren(lineBordered).
@@ -8190,7 +8194,9 @@
                 
                 defineInputField($scope, $element, $attrs, listener);
                 
-                $attrs.$observe("ngText", function () { $scope.value = $attrs.ngText; });
+                $attrs.$observe("ngText", function () { 
+                    $scope.value = (softtion.isText($attrs.ngText)) ? $attrs.ngText : undefined;
+                });
                 
                 $scope.isActiveLabel = function () {
                     return softtion.isDefined($scope.value);
@@ -11051,7 +11057,7 @@
             case (TextType.NUMBER): return "number";
             case (TextType.MATH): return "number";
             case (TextType.MONEY): return "number";
-            case (TextType.PASSWORD): return "password";
+            case (TextType.PASSWORD): return "text";
             default: return "text";
         }
     }
@@ -11145,8 +11151,8 @@
         // Atributos de control
         $scope.minLength = (isNaN($scope.minLength)) ? -1 : $scope.minLength;
 
-        $scope.typeInput = getTypeInput($scope.type || "text"); 
-        $scope.input = ""; $scope.errorActive = false; $scope.inputActive = false; 
+        $scope.typeInput = getTypeInput($scope.type); $scope.input = ""; 
+        $scope.errorActive = false; $scope.inputActive = false; 
         $scope.viewPassword = false; $scope.inputStart = false;
 
         if ($scope.type === "password") {
@@ -11168,6 +11174,10 @@
         $scope.isHideHelper = function () {
             return $scope.errorActive || (isDefinedModel() && !$scope.inputActive);
         };
+        
+        $scope.isPasswordField = function () {
+            return $scope.type === TextType.PASSWORD;
+        };
 
         $scope.getTextCounter = function () {
             var text = ($scope.inputActive) ? $scope.input : (isDefinedModel()) ? 
@@ -11186,7 +11196,6 @@
             if ($scope.type === "password") {
                 $scope.viewPassword = !$scope.viewPassword; // Definiendo visibilidad
 
-                $scope.typeInput = $scope.viewPassword ? "text" : "password";
                 $scope.iconAction = $scope.viewPassword ? "visibility_off" : "visibility";
             } else {
                 listener.launch(Listeners.ACTION, { $event: $event });

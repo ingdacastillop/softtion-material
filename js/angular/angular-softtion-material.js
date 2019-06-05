@@ -7763,6 +7763,7 @@
                 addAttribute("type", "{{typeInput}}").
                 addAttribute("autocomplete", "{{autocompleteValue}}").
                 addAttribute("ng-model", "input").
+                addAttribute("name", "{{ngName}}").
                 addAttribute("ng-click", "clickInput($event)").
                 addAttribute("ng-blur", "blurInput($event)").
                 addAttribute("ng-focus", "focusInput($event)").
@@ -7830,6 +7831,7 @@
                 ngModel: "=", 
                 label: "@", 
                 type: "@",
+                ngName: "@",
                 autocomplete: "=?",
                 required: "=?",
                 optional: "=?",
