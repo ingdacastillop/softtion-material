@@ -2738,6 +2738,7 @@ button.floating.theme-material:before {
 /** INPUT COMPONENTS */
 
 .autocomplete.filled > .content > .box,
+.color-input.filled > .content > .box,
 .clockpicker-input.filled > .content > .box,
 .datepicker-input.filled > .content > .box,
 .yearpicker-input.filled > .content > .box,
@@ -2751,6 +2752,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.filled.contrast > .content > .box,
 .theme-material .clockpicker-input.filled.contrast > .content > .box,
+.theme-material .color-input.filled.contrast > .content > .box,
 .theme-material .datepicker-input.filled.contrast > .content > .box,
 .theme-material .yearpicker-input.filled.contrast > .content > .box,
 .theme-material .labelfield.filled.contrast > .content > .box,
@@ -2763,6 +2765,7 @@ button.floating.theme-material:before {
 
 .autocomplete.filled > .content.active > .box,
 .clockpicker-input.filled > .content.active > .box,
+.color-input.filled > .content.active > .box,
 .datepicker-input.filled > .content.active > .box,
 .yearpicker-input.filled > .content.active > .box,
 .labelfield.filled > .content.active > .box,
@@ -2774,6 +2777,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.filled.contrast > .content.active > .box,
 .theme-material .clockpicker-input.filled.contrast > .content.active > .box,
+.theme-material .color-input.filled.contrast > .content.active > .box,
 .theme-material .datepicker-input.filled.contrast > .content.active > .box,
 .theme-material .yearpicker-input.filled.contrast > .content.active > .box,
 .theme-material .labelfield.filled.contrast > .content.active > .box,
@@ -2791,6 +2795,7 @@ button.floating.theme-material:before {
 
 .autocomplete.filled > .content.disabled > .box,
 .clockpicker-input.filled > .content.disabled > .box,
+.color-input.filled > .content.disabled > .box,
 .datepicker-input.filled > .content.disabled > .box,
 .yearpicker-input.filled > .content.disabled > .box,
 .select.filled > .content.disabled > .box,
@@ -2801,6 +2806,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.filled.contrast > .content.disabled > .box,
 .theme-material .clockpicker-input.filled.contrast > .content.disabled > .box,
+.theme-material .color-input.filled.contrast > .content.disabled > .box,
 .theme-material .datepicker-input.filled.contrast > .content.disabled > .box,
 .theme-material .yearpicker-input.filled.contrast > .content.disabled > .box,
 .theme-material .select.filled.contrast > .content.disabled > .box,
@@ -2810,6 +2816,7 @@ button.floating.theme-material:before {
 
 .autocomplete.outline > .content > .box,
 .clockpicker-input.outline > .content > .box,
+.color-input.outline > .content > .box,
 .datepicker-input.outline > .content > .box,
 .yearpicker-input.outline > .content > .box,
 .labelfield.outline > .content > .box,
@@ -2821,6 +2828,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.outline.contrast > .content > .box,
 .theme-material .clockpicker-input.outline.contrast > .content > .box,
+.theme-material .color-input.outline.contrast > .content > .box,
 .theme-material .datepicker-input.outline.contrast > .content > .box,
 .theme-material .yearpicker-input.outline.contrast > .content > .box,
 .theme-material .labelfield.outline.contrast > .content > .box,
@@ -2832,6 +2840,7 @@ button.floating.theme-material:before {
 
 .autocomplete.outline > .content.active > .box,
 .clockpicker-input.outline > .content.active > .box,
+.color-input.outline > .content.active > .box,
 .datepicker-input.outline > .content.active > .box,
 .yearpicker-input.outline > .content.active > .box,
 .labelfield.outline > .content.active > .box,
@@ -2846,6 +2855,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.outline.contrast > .content.active > .box,
 .theme-material .clockpicker-input.outline.contrast > .content.active > .box,
+.theme-material .color-input.outline.contrast > .content.active > .box,
 .theme-material .datepicker-input.outline.contrast > .content.active > .box,
 .theme-material .yearpicker-input.outline.contrast > .content.active > .box,
 .theme-material .labelfield.outline.contrast > .content.active > .box,
@@ -2866,6 +2876,7 @@ button.floating.theme-material:before {
 
 .autocomplete.outline > .content.disabled > .box,
 .clockpicker-input.outline > .content.disabled > .box,
+.color-input.outline > .content.disabled > .box,
 .datepicker-input.outline > .content.disabled > .box,
 .yearpicker-input.outline > .content.disabled > .box,
 .select.outline > .content.disabled > .box,
@@ -2876,6 +2887,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.outline.contrast > .content.disabled > .box,
 .theme-material .clockpicker-input.outline.contrast > .content.disabled > .box,
+.theme-material .color-input.outline.contrast > .content.disabled > .box,
 .theme-material .datepicker-input.outline.contrast > .content.disabled > .box,
 .theme-material .yearpicker-input.outline.contrast > .content.disabled > .box,
 .theme-material .select.outline.contrast > .content.disabled > .box,
@@ -2887,6 +2899,7 @@ button.floating.theme-material:before {
 .autocomplete.outline.capsule > .content > .box > .description,
 .chip-input.outline.capsule > .content > .box > .description,
 .clockpicker-input.outline.capsule > .content > .box > .description,
+.color-input.outline.capsule > .content > .box > .description,
 .datepicker-input.outline.capsule > .content > .box > .description,
 .labelfield.outline.capsule > .content > .box > .description,
 .yearpicker-input.outline.capsule > .content > .box > .description,
@@ -2899,6 +2912,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.outline.capsule.contrast > .content > .box > .description,
 .theme-material .chip-input.outline.capsule.contrast > .content > .box > .description,
 .theme-material .clockpicker-input.outline.capsule.contrast > .content > .box > .description,
+.theme-material .color-input.outline.capsule.contrast > .content > .box > .description,
 .theme-material .datepicker-input.outline.capsule.contrast > .content > .box > .description,
 .theme-material .labelfield.outline.capsule.contrast > .content > .box > .description,
 .theme-material .yearpicker-input.outline.capsule.contrast > .content > .box > .description,
@@ -2924,6 +2938,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.outline.capsule.contrast > .content.active > .box > .description,
 .theme-material .clockpicker-input.outline.capsule.contrast > .content.active > .box > .description,
+.theme-material .color-input.outline.capsule.contrast > .content.active > .box > .description,
 .theme-material .datepicker-input.outline.capsule.contrast > .content.active > .box > .description,
 .theme-material .yearpicker-input.outline.capsule.contrast > .content.active > .box > .description,
 .theme-material .labelfield.outline.capsule.contrast > .content.active > .box > .description,
@@ -2944,6 +2959,7 @@ button.floating.theme-material:before {
 
 .autocomplete.outline.capsule > .content.disabled > .box > .description,
 .clockpicker-input.outline.capsule > .content.disabled > .box > .description,
+.color-input.outline.capsule > .content.disabled > .box > .description,
 .datepicker-input.outline.capsule > .content.disabled > .box > .description,
 .yearpicker-input.outline.capsule > .content.disabled > .box > .description,
 .select.outline.capsule > .content.disabled > .box > .description,
@@ -2954,6 +2970,7 @@ button.floating.theme-material:before {
 
 .theme-material .autocomplete.outline.capsule.contrast > .content.disabled > .box > .description,
 .theme-material .clockpicker-input.outline.capsule.contrast > .content.disabled > .box > .description,
+.theme-material .color-input.outline.capsule.contrast > .content.disabled > .box > .description,
 .theme-material .datepicker-input.outline.capsule.contrast > .content.disabled > .box > .description,
 .theme-material .yearpicker-input.outline.capsule.contrast > .content.disabled > .box > .description,
 .theme-material .select.outline.capsule.contrast > .content.disabled > .box > .description,
@@ -2965,6 +2982,7 @@ button.floating.theme-material:before {
 .autocomplete > .content > .box > .description > i,
 .chip-input > .content > .box > .description > i,
 .clockpicker-input > .content > .box > .description > i,
+.color-input > .content > .box > .description > i,
 .datepicker-input > .content > .box > .description > i,
 .yearpicker-input > .content > .box > .description > i,
 .select > .content > .box > .description > i,
@@ -2976,6 +2994,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.contrast > .content > .box > .description > i,
 .theme-material .chip-input.contrast > .content > .box > .description > i,
 .theme-material .clockpicker-input.contrast > .content > .box > .description > i,
+.theme-material .color-input.contrast > .content > .box > .description > i,
 .theme-material .datepicker-input.contrast > .content > .box > .description > i,
 .theme-material .yearpicker-input.contrast > .content > .box > .description > i,
 .theme-material .select.contrast > .content > .box > .description > i,
@@ -2987,6 +3006,7 @@ button.floating.theme-material:before {
 .autocomplete.outline.capsule > .content > .box > .description > i,
 .chip-input.outline.capsule > .content > .box > .description > i,
 .clockpicker-input.outline.capsule > .content > .box > .description > i,
+.color-input.outline.capsule > .content > .box > .description > i,
 .datepicker-input.outline.capsule > .content > .box > .description > i,
 .yearpicker-input.outline.capsule > .content > .box > .description > i,
 .select.outline.capsule > .content > .box > .description > i,
@@ -2998,6 +3018,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.outline.capsule.contrast > .content > .box > .description > i,
 .theme-material .chip-input.outline.capsule.contrast > .content > .box > .description > i,
 .theme-material .clockpicker-input.outline.capsule.contrast > .content > .box > .description > i,
+.theme-material .color-input.outline.capsule.contrast > .content > .box > .description > i,
 .theme-material .datepicker-input.outline.capsule.contrast > .content > .box > .description > i,
 .theme-material .yearpicker-input.outline.capsule.contrast > .content > .box > .description > i,
 .theme-material .select.outline.capsule.contrast > .content > .box > .description > i,
@@ -3009,6 +3030,7 @@ button.floating.theme-material:before {
 .autocomplete > .content.disabled > .box >  .description > i,
 .chip-input > .content.disabled > .box >  .description > i,
 .clockpicker-input > .content.disabled > .box >  .description > i,
+.color-input > .content.disabled > .box >  .description > i,
 .datepicker-input > .content.disabled > .box >  .description > i,
 .yearpicker-input > .content.disabled > .box >  .description > i,
 .select > .content.disabled > .box >  .description > i,
@@ -3019,6 +3041,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.contrast > .content.disabled > .box >  .description > i,
 .theme-material .chip-input.contrast > .content.disabled > .box >  .description > i,
 .theme-material .clockpicker-input.contrast > .content.disabled > .box >  .description > i,
+.theme-material .color-input.contrast > .content.disabled > .box >  .description > i,
 .theme-material .datepicker-input.contrast > .content.disabled > .box >  .description > i,
 .theme-material .yearpicker-input.contrast > .content.disabled > .box >  .description > i,
 .theme-material .select.contrast > .content.disabled > .box >  .description > i,
@@ -3029,6 +3052,7 @@ button.floating.theme-material:before {
 .autocomplete.outline.capsule > .content.disabled > .box > .description > i,
 .chip-input.outline.capsule > .content.disabled > .box > .description > i,
 .clockpicker-input.outline.capsule > .content.disabled > .box > .description > i,
+.color-input.outline.capsule > .content.disabled > .box > .description > i,
 .datepicker-input.outline.capsule > .content.disabled > .box > .description > i,
 .yearpicker-input.outline.capsule > .content.disabled > .box > .description > i,
 .select.outline.capsule > .content.disabled > .box > .description > i,
@@ -3040,6 +3064,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.outline.capsule.contrast > .content.disabled > .box > .description > i,
 .theme-material .chip-input.outline.capsule.contrast > .content.disabled > .box > .description > i,
 .theme-material .clockpicker-input.outline.capsule.contrast > .content.disabled > .box > .description > i,
+.theme-material .color-input.outline.capsule.contrast > .content.disabled > .box > .description > i,
 .theme-material .datepicker-input.outline.capsule.contrast > .content.disabled > .box > .description > i,
 .theme-material .yearpicker-input.outline.capsule.contrast > .content.disabled > .box > .description > i,
 .theme-material .select.outline.capsule.contrast > .content.disabled > .box > .description > i,
@@ -3051,6 +3076,7 @@ button.floating.theme-material:before {
 .autocomplete > .content > .box > label,
 .chip-input > .content > .box > label,
 .clockpicker-input > .content > .box > label,
+.color-input > .content > .box > label,
 .datepicker-input > .content > .box > label,
 .yearpicker-input > .content > .box > label,
 .labelfield > .content > .box > label,
@@ -3063,6 +3089,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.contrast > .content > .box > label,
 .theme-material .chip-input.contrast > .content > .box > label,
 .theme-material .clockpicker-input.contrast > .content > .box > label,
+.theme-material .color-input.contrast > .content > .box > label,
 .theme-material .datepicker-input.contrast > .content > .box > label,
 .theme-material .yearpicker-input.contrast > .content > .box > label,
 .theme-material .labelfield.contrast > .content > .box > label,
@@ -3075,6 +3102,7 @@ button.floating.theme-material:before {
 .autocomplete > .content > .box > input:focus ~ label,
 .chip-input > .content > .box > input:focus ~ label,
 .clockpicker-input > .content.active > .box > label,
+.color-input > .content.active > .box > label,
 .datepicker-input > .content.active > .box > label,
 .yearpicker-input > .content.active > .box > label,
 .select > .content.active > .box > label,
@@ -3086,6 +3114,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.contrast > .content > .box > input:focus ~ label,
 .theme-material .chip-input.contrast > .content > .box > input:focus ~ label,
 .theme-material .clockpicker-input.contrast > .content.active > .box > label,
+.theme-material .color-input.contrast > .content.active > .box > label,
 .theme-material .datepicker-input.contrast > .content.active > .box > label,
 .theme-material .yearpicker-input.contrast > .content.active > .box > label,
 .theme-material .select.contrast > .content.active > .box > label,
@@ -3096,9 +3125,10 @@ button.floating.theme-material:before {
 
 .autocomplete > .content > .box > input:disabled ~ label,
 .chip-input > .content > .box > input:disabled ~ label,
+.clockpicker-input > .content.disabled > .box >  label,
+.color-input > .content.disabled > .box >  label,
 .datepicker-input > .content.disabled > .box >  label,
 .yearpicker-input > .content.disabled > .box >  label,
-.clockpicker-input > .content.disabled > .box >  label,
 .select > .content.disabled > .box >  label,
 .select-multiple > .content.disabled > .box >  label,
 .textfield > .content > .box > input:disabled ~ label {
@@ -3107,6 +3137,7 @@ button.floating.theme-material:before {
 .theme-material .autocomplete.contrast > .content > .box > input:disabled ~ label,
 .theme-material .chip-input.contrast > .content > .box > input:disabled ~ label,
 .theme-material .clockpicker-input.contrast > .content.disabled > .box > label,
+.theme-material .color-input.contrast > .content.disabled > .box > label,
 .theme-material .datepicker-input.contrast > .content.disabled > .box > label,
 .theme-material .yearpicker-input.contrast > .content.disabled > .box > label,
 .theme-material .select.contrast > .content.disabled > .box > label,
@@ -3121,6 +3152,7 @@ button.floating.theme-material:before {
 .autocomplete > .content > .box > input:focus ~ label > span,
 .chip-input > .content > .box > input:focus ~ label > span,
 .clockpicker-input > .content.active > .box > label > span,
+.color-input > .content.active > .box > label > span,
 .datepicker-input > .content.active > .box > label > span,
 .yearpicker-input > .content.active > .box > label > span,
 .select > .content.active > .box > label > span,
@@ -3130,6 +3162,7 @@ button.floating.theme-material:before {
 
 .autocomplete > .content > .box > input,
 .chip-input > .content > .box > input,
+.color-input > .content > .box > input,
 .select > .content > .box > input,
 .select-multiple > .content > .box > input,
 .textfield > .content > .box > input,
@@ -3249,6 +3282,7 @@ input:-webkit-autofill {
 .autocomplete > .content > .box > .line-bordered,
 .chip-input > .content > .box > .line-bordered,
 .clockpicker-input > .content > .box > .line-bordered,
+.color-input > .content > .box > .line-bordered,
 .datepicker-input > .content > .box > .line-bordered,
 .yearpicker-input > .content > .box > .line-bordered,
 .labelfield > .content > .box > .line-bordered,
@@ -3261,6 +3295,7 @@ input:-webkit-autofill {
 .theme-material .autocomplete.contrast > .content > .box > .line-bordered,
 .theme-material .chip-input.contrast > .content > .box > .line-bordered,
 .theme-material .clockpicker-input.contrast > .content > .box > .line-bordered,
+.theme-material .color-input.contrast > .content > .box > .line-bordered,
 .theme-material .datepicker-input.contrast > .content > .box > .line-bordered,
 .theme-material .yearpicker-input.contrast > .content > .box > .line-bordered,
 .theme-material .select.contrast > .content > .box > .line-bordered,
@@ -3273,6 +3308,7 @@ input:-webkit-autofill {
 .autocomplete > .content:hover > .box > .line-bordered,
 .chip-input > .content:hover > .box > .line-bordered,
 .clockpicker-input > .content:hover > .box > .line-bordered,
+.color-input > .content:hover > .box > .line-bordered,
 .datepicker-input > .content:hover > .box > .line-bordered,
 .yearpicker-input > .content:hover > .box > .line-bordered,
 .select > .content:hover > .box > .line-bordered,
@@ -3284,6 +3320,7 @@ input:-webkit-autofill {
 .theme-material .autocomplete.contrast > .content:hover > .box > .line-bordered,
 .theme-material .chip-input.contrast > .content:hover > .box > .line-bordered,
 .theme-material .clockpicker-input.contrast > .content:hover > .box > .line-bordered,
+.theme-material .color-input.contrast > .content:hover > .box > .line-bordered,
 .theme-material .datepicker-input.contrast > .content:hover > .box > .line-bordered,
 .theme-material .yearpicker-input.contrast > .content:hover > .box > .line-bordered,
 .theme-material .select.contrast > .content:hover > .box > .line-bordered,
@@ -3293,6 +3330,7 @@ input:-webkit-autofill {
     border-bottom: 2px solid var(--theme-material-font-secondary-500); }
 
 .clockpicker-input > .content.active > .box > .line-bordered,
+.color-input > .content.active > .box > .line-bordered,
 .datepicker-input > .content.active > .box > .line-bordered,
 .yearpicker-input > .content.active > .box > .line-bordered,
 .textfield-readonly > .content > .box > input:focus ~ .line-bordered {
@@ -3302,6 +3340,7 @@ input:-webkit-autofill {
     border-bottom: 1px solid var(--theme-material-100); }
 
 .theme-material .clockpicker-input.contrast input:focus ~ .line-bordered,
+.theme-material .color-input.contrast input:focus ~ .line-bordered,
 .theme-material .datepicker-input.contrast input:focus ~ .line-bordered,
 .theme-material .yearpicker-input.contrast input:focus ~ .line-bordered,
 .theme-material .textfield-readonly.contrast input:focus ~ .line-bordered {
@@ -3312,6 +3351,7 @@ input:-webkit-autofill {
 
 .autocomplete > .content > .box > input:disabled ~ .line-bordered,
 .chip-input > .content > .box > input:disabled ~ .line-bordered,
+.color-input > .content.disabled > .box >  .line-bordered,
 .clockpicker-input > .content.disabled > .box >  .line-bordered,
 .datepicker-input > .content.disabled > .box >  .line-bordered,
 .yearpicker-input > .content.disabled > .box >  .line-bordered,
@@ -3328,6 +3368,7 @@ input:-webkit-autofill {
 .theme-material .autocomplete.contrast > .content > .box > input:disabled ~ .line-bordered,
 .theme-material .chip-input.contrast > .content > .box > input:disabled ~ .line-bordered,
 .theme-material .clockpicker-input.contrast > .content.disabled > .box >  .line-bordered,
+.theme-material .color-input.contrast > .content.disabled > .box >  .line-bordered,
 .theme-material .datepicker-input.contrast > .content.disabled > .box >  .line-bordered,
 .theme-material .yearpicker-input.contrast > .content.disabled > .box >  .line-bordered,
 .theme-material .select.contrast > .content > .box > input:disabled ~ .line-bordered,
@@ -3336,11 +3377,12 @@ input:-webkit-autofill {
     border-bottom: 1px dashed var(--theme-material-font-disabled-500); }
 
 .autocomplete.synthetic > .content > .box > input:disabled ~ .line-bordered, 
+.clockpicker-input.synthetic > .content.disabled > .box > .line-bordered, 
+.color-input.synthetic > .content.disabled > .box > .line-bordered, 
 .datepicker-input.synthetic > .content.disabled > .box > .line-bordered, 
 .yearpicker-input.synthetic > .content.disabled > .box > .line-bordered, 
 .textfield.synthetic > .content.disabled > .box > .line-bordered, 
 .select.synthetic > .content > .box > input:disabled ~ .line-bordered, 
-.clockpicker-input.synthetic > .content.disabled > .box > .line-bordered, 
 .chip-input.synthetic > .content > .box > input:disabled ~ .line-bordered, 
 .select-multiple.synthetic > .content > .box > input:disabled ~ .line-bordered {
     box-shadow: inset 0 0 1px 0 var(--background-border);

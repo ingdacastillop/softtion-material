@@ -132,8 +132,8 @@
 .filled, .outline {
     --icon-action-width-lower: 28px; }
 
-.autocomplete, .chip-input, .clockpicker-input, .labelfield,
-.datepicker-input, .yearpicker-input, .select, 
+.autocomplete, .chip-input, .clockpicker-input, .labelfield, 
+.color-input, .datepicker-input, .yearpicker-input, .select, 
 .select-multiple, .textfield, .textfield-readonly {
     position: relative;
     float: left;
@@ -153,7 +153,7 @@
 .autocomplete > .content, .chip-input > .content,
 .clockpicker-input > .content, .datepicker-input > .content,
 .yearpicker-input > .content, .labelfield > .content,
-.select > .content, .select-multiple > .content, 
+.color-input > .content, .select > .content, .select-multiple > .content, 
 .textfield > .content, .textfield-readonly > .content {
     position: relative;
     width: 100%;
@@ -175,6 +175,7 @@
 
 .autocomplete.filled > .content,
 .clockpicker-input.filled > .content,
+.color-input.filled > .content,
 .datepicker-input.filled > .content,
 .yearpicker-input .filled > .content,
 .select.filled > .content,
@@ -186,6 +187,7 @@
 .autocomplete > .content.disabled,
 .chip-input > .content.disabled,
 .clockpicker-input > .content.disabled,
+.color-input > .content.disabled,
 .datepicker-input > .content.disabled,
 .yearpicker-input  > .content.disabled,
 .select > .content.disabled,
@@ -195,6 +197,7 @@
 
 .autocomplete.synthetic > .content, 
 .clockpicker-input.synthetic > .content, 
+.color-input.synthetic > .content, 
 .datepicker-input.synthetic > .content,
 .yearpicker-input.synthetic > .content, 
 .labelfield.synthetic > .content, 
@@ -209,6 +212,7 @@
 
 .autocomplete.synthetic.inline > .content, 
 .clockpicker-input.synthetic.inline > .content, 
+.color-input.synthetic.inline > .content, 
 .datepicker-input.synthetic.inline > .content,
 .yearpicker-input.synthetic.inline > .content, 
 .labelfield.synthetic.inline > .content, 
@@ -221,6 +225,7 @@
 .autocomplete > .content > .box,
 .chip-input > .content > .box,
 .clockpicker-input > .content > .box,
+.color-input > .content > .box,
 .datepicker-input > .content > .box,
 .yearpicker-input > .content > .box,
 .labelfield > .content > .box,
@@ -233,6 +238,7 @@
 
 .autocomplete.filled > .content > .box,
 .clockpicker-input.filled > .content > .box,
+.color-input.filled > .content > .box,
 .datepicker-input.filled > .content > .box,
 .yearpicker-input.filled > .content > .box,
 .labelfield.filled > .content > .box,
@@ -244,6 +250,7 @@
 
 .autocomplete.outline > .content > .box,
 .clockpicker-input.outline > .content > .box,
+.color-input.outline > .content > .box,
 .datepicker-input.outline > .content > .box,
 .yearpicker-input.outline > .content > .box,
 .labelfield.outline > .content > .box,
@@ -358,6 +365,7 @@
          -o-transition: all 120ms 0ms var(--sharp-curve);
             transition: all 120ms 0ms var(--sharp-curve); }
 
+.color-input > .content > .box > label,
 .clockpicker-input > .content > .box > label,
 .datepicker-input > .content > .box > label,
 .yearpicker-input > .content > .box > label,
@@ -463,6 +471,11 @@
 .autocomplete.filled > .content.disabled-clear {
     --input-width-default: calc(100% - 24px); }
 
+.color-input.filled {
+    --input-width-default: calc(100% - 20px);
+    --input-height-default: 28px;
+    --input-padding-default: 16px 10px 2px 10px; }
+
 .outline {
     --input-width-default: calc(100% - 22px);
     --input-padding-default: 14px 11px 0px 11px; }
@@ -472,6 +485,11 @@
 
 .autocomplete.outline > .content.disabled-clear {
     --input-width-default: calc(100% - 22px); }
+
+.color-input.outline {
+    --input-width-default: calc(100% - 18px);
+    --input-height-default: 28px;
+    --input-padding-default: 16px 9px 2px 9px; }
 
 .synthetic {
     --input-width-default: calc(100% - 12px);
@@ -497,6 +515,17 @@
     font-size: var(--body-1-size);
     letter-spacing: var(--body-1-letterspacing);
     font-weight: var(--body-1-weight); }
+
+.color-input > .content > .box > input {
+    cursor: pointer; }
+
+.color-input > .content > .box > input.invisible {
+    visibility: hidden; }
+
+.color-input.filled > .content > .box > input,
+.color-input.outline > .content > .box > input {
+    padding: 0px;
+    margin: var(--input-padding-default); }
 
 .chip-input > .content > .box > input {
     display: inline-block;
@@ -703,6 +732,11 @@
 .select.align-right > .content > .box > .value { 
     text-align: right; }
 
+.color-input > .content > .box > .value {
+    text-align: center;
+    font-size: var(--overline-size); }
+
+.color-input > .content > .box > .value,
 .clockpicker-input > .content > .box > .value,
 .select > .content > .box > .value,
 .datepicker-input > .content > .box > .value,
