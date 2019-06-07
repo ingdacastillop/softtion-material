@@ -72,6 +72,8 @@
 
                 ClockPickerInput: Directives.create(Directives.ClockPickerInput),
                 
+                ColorInput: Directives.create(Directives.ColorInput),
+                
                 DataTable: Directives.create(Directives.DataTable),
 
                 DatePicker: Directives.create(Directives.DatePicker),
@@ -306,6 +308,7 @@
             case (Directives.ClockPicker.NAME): return Directives.ClockPicker;
             case (Directives.ClockPickerDialog.NAME): return Directives.ClockPickerDialog;
             case (Directives.ClockPickerInput.NAME): return Directives.ClockPickerInput;
+            case (Directives.ColorInput.NAME): return Directives.ColorInput;
             case (Directives.DataTable.NAME): return Directives.DataTable;
             case (Directives.DatePicker.NAME): return Directives.DatePicker;
             case (Directives.DatePickerDialog.NAME): return Directives.DatePickerDialog;
@@ -762,14 +765,14 @@
     Directives.AutoComplete.ROUTE = "softtion/template/autocomplete.html";
     
     Directives.AutoComplete.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
-        var content = softtion.html("div").addClass("content").
+        var content = softtion.html("div").addClass("content").addChildren(box).
                 addAttribute("ng-class", 
                     "{active: inputActive, disabled: ngDisabled, focused:" +
                     " inputFocused, \"icon-action\": isIconAction, \"label-inactive\":" +
                     " !isLabel, \"disabled-clear\": isInactiveClear()}"
-                ).addChildren(box);
+                );
         
         var description = softtion.html("div").addClass("description").
                 addAttribute("ng-click", "clickIconDescription($event)").
@@ -2356,7 +2359,7 @@
     Directives.ChipInput.ROUTE = "softtion/template/chip-input.html",
                     
     Directives.ChipInput.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute(
@@ -2948,7 +2951,7 @@
     Directives.ClockPickerInput.ROUTE = "softtion/template/clockpicker-input.html",
                     
     Directives.ClockPickerInput.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute("tabindex", "0").
@@ -3104,6 +3107,132 @@
                     $scope.ngOpen = true; // Desplegando dialog
                     listener.launch(Listeners.SHOW, { $event: $event });
                 }
+            }
+        };
+    }
+    
+    // Directiva: TextFieldColor
+    // Version: 1.0.0
+    // Update: 07/Jun/2019
+    
+    Directives.ColorInput = ColorInputDirective;
+    
+    Directives.ColorInput.NAME = "ColorInput";
+    Directives.ColorInput.VERSION = "1.0.0";
+    Directives.ColorInput.KEY = "colorInput";
+    Directives.ColorInput.ROUTE = "softtion/template/color-input.html";
+    
+    Directives.ColorInput.HTML = function () {
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
+        
+        var content = softtion.html("div").addClass("content").addChildren(box).
+                addAttribute("ng-class",
+                    "{active: inputActive, \"label-inactive\": !isLabel," +
+                    " disabled: ngDisabled, \"icon-action\": isIconAction}"
+                );
+        
+        var description = softtion.html("div").addClass("description").
+                addAttribute("ng-click", "clickIconDescription($event)").
+                addAttribute("ng-if", "isIconDescription || isIconImg").
+                addChildren(
+                    softtion.html("div").addClass("img-icon").
+                        addAttribute("ng-if", "isIconImg").
+                        addChildren(
+                            softtion.html("img", false).addAttribute("ng-src", "{{iconImg}}")
+                        )
+                ).addChildren(
+                    softtion.html("i").addAttribute("ng-if", "isIconDescription").
+                        setText("{{iconDescription}}")
+                );
+
+        var input = softtion.html("input", false).
+                addAttribute("type", "color").
+                addAttribute("ng-model", "ngModel").
+                addAttribute("ng-readonly", "ngReadonly").
+                addAttribute("ng-disabled", "ngDisabled").
+                addAttribute("ng-class", "{invisible: !ngModel}");
+
+        var value = softtion.html("p").addClass(["value"]).
+                setText("{{ngModel}}").
+                addAttribute("ng-class", "{\"holder-active\": isHolderActive()}");
+
+        var lineBordered = softtion.html("div").addClass("line-bordered");
+
+        var label = softtion.html("label").
+                addAttribute("ng-class", "{active: isActiveLabel()}").
+                setText("{{label}}").addClass("truncate").
+                addChildren(
+                    softtion.html("span").setText("*").addAttribute("ng-if", "required")
+                );
+
+        var spanHelper = softtion.html("span").addClass(["help", "truncate"]).
+                setText("{{helperText}}").addAttribute("ng-hide", "!isHelperActive()");
+
+        box.addChildren(description).addChildren(input).
+            addChildren(value).addChildren(lineBordered).
+            addChildren(label).addChildren(spanHelper);
+
+        return content.create(); // Componente
+    };
+    
+    function ColorInputDirective() {
+        return {
+            restrict: "C",
+            templateUrl: Directives.ColorInput.ROUTE,
+            scope: {
+                ngModel: "=", 
+                label: "@",
+                required: "=?",
+                iconDescription: "@",
+                iconImg: "@",
+                ngDisabled: "=?",
+                ngReadonly: "=?",
+                iconAction: "@",
+                helperText: "@",
+                helperPermanent: "=?",
+                ngListener: "&"
+            },
+            link: function ($scope, $element, $attrs) {
+                    // Atributos
+                var input = $element.find("input[type=color]"),
+                    value = $element.find(".value");
+                
+                    // Atributos
+                var listener = new Listener($scope, []);
+                
+                $element.on("click", function ($event) {
+                    if ($event.target !== input[0]) {
+                        input.click(); return; // Evento autómatico
+                    }
+                    
+                    $scope.$apply(function () {
+                        listener.launch(Listeners.CLICK, { $event: $event }); 
+                    });
+                });
+        
+                $attrs.$observe("label", function () {
+                    $scope.isLabel = softtion.isText($attrs.label);
+                });
+                
+                $scope.$watch(function () { return $scope.ngModel; },
+                    function (newValue) {
+                        if (!softtion.isText(newValue)) return; // Indefinido
+                        
+                        var light = new ColorMaterial("#ffffff");
+                        var theme = new ColorMaterial(newValue);
+                        
+                        var result = ColorMaterial.mix(light._color, theme._color, 100);
+                        
+                        value.css("color", result.isLight() ? "black" : "white");
+                    });
+                
+                $scope.isActiveLabel = function () {
+                    return softtion.isDefined($scope.ngModel);
+                };
+
+                $scope.isHelperActive = function () {
+                    return softtion.isUndefined($scope.ngModel) || $scope.helperPermanent;
+                };
             }
         };
     }
@@ -3723,7 +3852,7 @@
     Directives.DatePickerInput.ROUTE = "softtion/template/datepicker-input.html",
                     
     Directives.DatePickerInput.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute("tabindex", "0").
@@ -5343,7 +5472,7 @@
     Directives.ImageEditor.ROUTE = "softtion/template/image-editor.html";
                     
     Directives.ImageEditor.HTML = function () {
-        var box = softtion.html("div").addClass("box"); // Contenedor principal
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes // Contenedor principal
         
         var panel = softtion.html("div").addClass("panel").
                 addAttribute("ng-hide", "!progress.loaded").
@@ -5693,7 +5822,7 @@
     Directives.LabelField.ROUTE = "softtion/template/labelfield.html";
     
     Directives.LabelField.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
             addAttribute("ng-class",
@@ -6614,7 +6743,7 @@
     Directives.Select.ROUTE = "softtion/template/select.html";
     
     Directives.Select.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute("ng-class", 
@@ -6910,7 +7039,7 @@
     Directives.SelectMultiple.ROUTE = "softtion/template/select-multiple.html";
     
     Directives.SelectMultiple.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute("ng-class", 
@@ -7859,7 +7988,7 @@
     Directives.TextField.ROUTE = "softtion/template/textfield.html";
     
     Directives.TextField.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
             addAttribute("ng-class",
@@ -7996,7 +8125,7 @@
     Directives.TextFieldMultiline.ROUTE = "softtion/template/textfield-multiline.html";
     
     Directives.TextFieldMultiline.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute("ng-class",
@@ -8117,7 +8246,7 @@
     Directives.TextFieldReadonly.ROUTE = "softtion/template/textfield-readonly.html";
     
     Directives.TextFieldReadonly.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").addChildren(box).
                 addAttribute("ng-class", 
@@ -8674,7 +8803,7 @@
     Directives.YearPickerInput.ROUTE = "softtion/template/yearpicker-input.html",
                     
     Directives.YearPickerInput.HTML = function () {
-        var box = softtion.html("div").addClass("box");
+        var box = softtion.html("div").addClass("box"); // Contenedor de componentes
         
         var content = softtion.html("div").addClass("content").
                 addAttribute("tabindex", "0").
