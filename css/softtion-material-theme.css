@@ -2238,7 +2238,8 @@ button.floating.theme-material:before {
 .sidenav > .content.contrast > button.action.close {
     color: var(--alternative-primary-font); }
 
-.sidenav.theme-material > .content > button.action.close {
+.sidenav.theme-material > .content > button.action.close,
+.sidenav > .content > .logo.theme-material ~ button.action.close {
     color: var(--theme-material-font-primary-700); }
 
 .sidenav > .content > button.action.close:before {
@@ -2247,10 +2248,12 @@ button.floating.theme-material:before {
 .sidenav > .content.contrast > button.action.close:before {
     background-color: var(--alternative-ripple); }
 
-.sidenav.theme-material > .content > button.action.close:before {
+.sidenav.theme-material > .content > button.action.close:before,
+.sidenav > .content > .logo.theme-material ~ button.action.close:before {
     background-color: var(--theme-material-ripple-700); }
 
-.sidenav.theme-material > .content > button.action.close:after {
+.sidenav.theme-material > .content > button.action.close:after,
+.sidenav > .content > .logo.theme-material ~ button.action.close:after {
     background-color: var(--theme-material-ripple-700); }
 
 .sidenav.theme-material > .content .divider {
