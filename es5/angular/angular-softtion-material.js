@@ -1190,9 +1190,10 @@
                     if ($scope.searchMode) {
                         $scope.ngModel = undefined; $scope.input = "";
                         $scope.select = suggestion; $scope.focusedInput = true; 
-                        listener.launch(Listeners.SELECT); // Evento selection
+                        listener.launch(Listeners.SELECT); // Evento selección
                     } else {
                         $scope.ngModel = suggestion; // Asignando
+                        listener.launch(Listeners.SUGGESTION); // Evento selección
                     }
                 };
 
@@ -1757,6 +1758,7 @@
                 ngDisabled: "=?",
                 ngHide: "=?",
                 icon: "@",
+                img: "@",
                 tabindex: "@",
                 ngClick: "&",
                 tooltip: "@"
@@ -1769,13 +1771,20 @@
                         addAttribute("ng-disabled", "isDisabled()").
                         addAttribute("ng-hide", "ngHide").
                         addAttribute("ng-click", "buttonClick($event)").
-                        addAttribute("tooltip", "{{tooltip}}").
-                        addChildren(softtion.html("i").setText("{{icon}}")).
-                        addChildren(
-                            softtion.html("div").addClass("progress-circular").
-                                addAttribute("indeterminate", "true").
-                                addAttribute("ng-visible", "ngProgress")
-                        );
+                        addAttribute("tooltip", "{{tooltip}}");
+                
+                if (softtion.isText($scope.icon))
+                    button.addChildren(softtion.html("i").setText("{{icon}}"));
+                
+                if (softtion.isText($scope.img))
+                    button.addChildren(softtion.html("img").addAttribute("ng-src", "{{img}}"));
+                
+                // Agregando componente de progreso
+                button.addChildren(
+                    softtion.html("div").addClass("progress-circular").
+                        addAttribute("indeterminate", "true").
+                        addAttribute("ng-visible", "ngProgress")
+                );
             
                 $element.replaceWith($compile(button.create())($scope));
                 
@@ -8876,7 +8885,6 @@
             templateUrl: Directives.YearPickerInput.ROUTE,
             scope: {
                 ngModel: "=",
-                format: "@",
                 label: "@",
                 required: "=?",
                 optional: "=?",
@@ -8900,14 +8908,13 @@
                     // Atributos
                 var listener = new Listener($scope, Listener.KEYS.YEARPICKER);
                 
-                $scope.format = $scope.format || "ww, dd de mn del aa";
                 $scope.ngOpen = false; // Dialog inicia oculto
 
                 $scope.$watch(function () { return $scope.ngModel; }, 
                     function (newValue, oldValue) {
                         if (softtion.isUndefined(newValue)) return; // Indefindo
                         
-                        if (!softtion.isDate(newValue)) $scope.ngModel = oldValue;
+                        if (!softtion.isNumber(newValue)) $scope.ngModel = oldValue;
                     });
                     
                 defineInputField($scope, $element, $attrs, listener);

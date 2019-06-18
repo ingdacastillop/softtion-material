@@ -947,18 +947,18 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                 ACTION: "action",
                 EDIT: "edit",
                 CHANGED: "changed",
-                SELECTED: "selected",
                 CLEAR: "clear",
                 ADD: "add",
                 REMOVE: "remove",
                 SELECT: "select",
+                OPTION: "option",
+                SUGGESTION: "suggestion",
                 CANCEL: "cancel",
                 SAVE: "save",
                 DETERMINATE: "determinate",
                 SUCCESS: "success",
                 ERROR: "error",
-                CHECKBOX: "checkbox",
-                OPTION: "option"
+                CHECKBOX: "checkbox"
             };
         }
 
