@@ -4891,8 +4891,8 @@ body.show-keyboard .fab-speed-dial {
 
 .form > .header > .nav-icon {
     position: absolute;
+    top: 50%;
     left: 10px;
-    top: calc(50% + 4px);
     -webkit-transform: translateY(calc(-50%));
        -moz-transform: translateY(calc(-50%));
          -o-transform: translateY(calc(-50%));
