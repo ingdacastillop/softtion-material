@@ -7,25 +7,25 @@
 
 @font-face {
     font-family: "cooperhewitt";
-    src: url("CooperHewitt-Light.otf") format("opentype");
+    src: url("CooperHewitt-Light.ttf") format("truetype");
     font-weight: 300; }
 
 @font-face {
     font-family: "cooperhewitt";
-    src: url("CooperHewitt-Regular.otf") format("opentype");
+    src: url("CooperHewitt-Medium.ttf") format("truetype");
     font-weight: 400; }
 
 @font-face {
     font-family: "cooperhewitt";
-    src: url("CooperHewitt-Medium.otf") format("opentype");
+    src: url("CooperHewitt-Medium.ttf") format("truetype");
     font-weight: 500; }
 
 @font-face {
     font-family: "cooperhewitt";
-    src: url("CooperHewitt-SemiBold.otf") format("opentype");
+    src: url("CooperHewitt-SemiBold.ttf") format("truetype");
     font-weight: 600; }
 
 @font-face {
     font-family: "cooperhewitt";
-    src: url("CooperHewitt-Bold.otf") format("opentype");
+    src: url("CooperHewitt-Bold.ttf") format("truetype");
     font-weight: 700; }

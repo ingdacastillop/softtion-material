@@ -221,6 +221,9 @@ body.not-touch *::-webkit-scrollbar-thumb:hover {
 
 /** AVATAR */
 
+.avatar.theme-material {
+    background-color: var(--theme-material-500); }
+
 .avatar.actionable:hover:before {
     background-color: rgba(189, 189, 189, 0.87); }
 
@@ -1018,6 +1021,9 @@ button.floating.theme-material:before {
     color: var(--alternative-primary-font); }
 
 .datatable > .content > table > tbody > tr > td.buttons.contrast button.action:before {
+    background-color: var(--alternative-ripple); }
+
+.datatable > .content > table > tbody > tr > td.buttons.contrast button.action:after {
     background-color: var(--alternative-ripple); }
 
 .datatable > .content > table > tbody > tr > td.buttons.contrast button.action:disabled {

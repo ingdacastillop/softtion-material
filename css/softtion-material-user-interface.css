@@ -4891,8 +4891,8 @@ body.show-keyboard .fab-speed-dial {
 
 .form > .header > .nav-icon {
     position: absolute;
+    top: 50%;
     left: 10px;
-    top: calc(50% + 4px);
     -webkit-transform: translateY(calc(-50%));
        -moz-transform: translateY(calc(-50%));
          -o-transform: translateY(calc(-50%));
@@ -9467,12 +9467,18 @@ body.show-keyboard .toast.show {
 
 .toolbar > .avatars:last-child {
     margin-right: 12px; }
+
+.toolbar > .actions + .avatars {
+    margin-left: 12px; }
     
 .toolbar > .avatars > .avatar {
     width: 40px;
     line-height: 40px;
     height: 40px;
     margin: 8px 4px; }
+
+.toolbar > .avatars > .avatar + .avatar {
+    margin-left: 12px; }
 
 @media only screen and (min-width : 961px) {
     
