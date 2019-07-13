@@ -962,10 +962,20 @@ button.floating.theme-material:before {
 .datatable > .content > table > thead > tr > th {
     color: var(--secondary-font); }
 
+.datatable > .content > table > thead > tr > th.border-lft {
+    border-left: 1px solid var(--background-border); }
+
+.datatable > .content > table > thead > tr > th.border-rgt {
+    border-right: 1px solid var(--background-border); }
+
+.datatable > .content > table > thead > tr > th > i {
+    color: var(--disabled-font); }
+
 .datatable > .content > table > tbody > tr {
     border-bottom: 1px solid var(--background-border); }
 
 .datatable.raised > .content > table > tbody > tr:nth-last-of-type(1),
+.datatable > .content > table > tbody > tr.border-none,
 .datatable.bordered > .content > table > tbody > tr:nth-last-of-type(1) {
     border-bottom: none; }
 
@@ -983,8 +993,11 @@ button.floating.theme-material:before {
     background-color: var(--theme-material-50);
     color: var(--theme-material-font-primary-50); }
 
-.datatable > .content > table > thead > tr > th > i {
-    color: var(--disabled-font); }
+.datatable > .content > table > tbody > tr > td.border-lft {
+    border-left: 1px solid var(--background-border); }
+
+.datatable > .content > table > tbody > tr > td.border-rgt {
+    border-right: 1px solid var(--background-border); }
 
 .datatable > .content > table > tbody > tr > td > i {
     color: var(--secondary-font); }
@@ -3540,6 +3553,29 @@ input:-webkit-autofill {
     border: 2px solid var(--theme-material-font-primary-500);
     border-top: 2px solid transparent;
     border-left: 2px solid transparent; }
+
+/** INPUTS IN DATATABLE */
+
+.datatable > .header > .select {
+    background-color: var(--background-component); }
+
+.datatable.theme-material > .header > .select.contrast {
+    background-color: var(--theme-material-200); }
+
+.datatable.theme-material > .header > .select.contrast .value {
+    color: var(--theme-material-font-primary-200) !important; }
+
+.datatable.theme-material > .header > .select.contrast .value.holder-active {
+    color: var(--theme-material-font-secondary-200) !important; }
+
+.datatable.theme-material > .header > .select.contrast button.action  {
+    color: var(--theme-material-font-secondary-200) !important; }
+
+.datatable.theme-material > .header > .select.contrast button.action:before {
+    color: var(--theme-material-ripple-200) !important; }
+
+.datatable.theme-material > .header > .select.contrast button.action:disabled {
+    color: var(--theme-material-font-disabled-200) !important; }
 
 /** TEXTFIELD MULTILINE */
 

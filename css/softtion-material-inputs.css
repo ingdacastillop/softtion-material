@@ -1684,6 +1684,47 @@
 
 /** INPUTS IN DATATABLE */
 
+.datatable > .header > .select {
+    border-radius: 4px;
+    width: 100%;
+    margin: 8px 8px 8px 0px; }
+
+.datatable > .header > .select > .content {
+    padding: 4px 0px; }
+
+.datatable.condense > .header > .select > .content {
+    padding: 0px; }
+
+.datatable > .header > .select > .content > .box > input {
+    padding: 4px 0px;
+    margin: 0px 8px;
+    width: calc(100% - 48px); }
+
+.datatable > .header > .select > .content > .box > .value {
+    bottom: 8px;
+    left: 8px;
+    width: calc(100% - 48px); }
+
+.datatable.condense > .header > .select > .content > .box > .value {
+    bottom: 4px; }
+
+.datatable > .header > .select > .content > .box > button.action {
+    right: 0px;
+    bottom: 12px; }
+
+.datatable.condense > .header > .select > .content > .box > button.action {
+    bottom: 8px; }
+
+.datatable > .header > .select > .content > .box > ul {
+    left: 8px;
+    width: calc(100% - 16px); }
+
+.datatable > .header > .select > .content > .box > .line-shadow,
+.datatable > .header > .select > .content > .box > label,
+.datatable > .header > .select > .content > .box > span,
+.datatable > .header > .select > .content > .box > .line-bordered {
+    display: none; }
+
 .datatable > .content tbody .autocomplete,
 .datatable > .content tbody .clockpicker-input,
 .datatable > .content tbody .datepicker-input,
