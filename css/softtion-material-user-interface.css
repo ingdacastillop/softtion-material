@@ -2897,8 +2897,8 @@ button.raised:focus:after, button.flat:focus:after {
 .datatable > .content > table > thead > tr > th > img {
     opacity: 0.56; }
 
-.datatable.condense > .content > table > thead > tr > th > img,
-.datatable.condense > .content > table > tbody > tr > td > img {
+.datatable > .content > table > thead > tr > th > img.condense,
+.datatable > .content > table > tbody > tr > td > img.condense {
     width: 20px;
     height: 20px;
     top: calc(50% - 10px);

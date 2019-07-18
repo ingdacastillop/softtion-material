@@ -105,6 +105,18 @@
 .white-font {
     color: #ffffff !important; }
 
+.border-top {
+    border-top: 1px solid var(--background-border); }
+
+.border-bot {
+    border-bottom: 1px solid var(--background-border); }
+
+.border-lft {
+    border-left: 1px solid var(--background-border); }
+
+.border-rgt {
+    border-right: 1px solid var(--background-border); }
+
 /** COLOR FONT DEAFULT */
 
 html, body ,input, textarea {
