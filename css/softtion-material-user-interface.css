@@ -2879,6 +2879,21 @@ button.raised:focus:after, button.flat:focus:after {
     width: 48px;
     overflow: initial; }
 
+.datatable.condense > .content > table > tbody td > .detail {
+    height: 40px; }
+
+.datatable > .content > table > tbody td > .detail > .content {
+    padding: 0px; }
+
+.datatable > .content > table > tbody td > .detail > .content > .title {
+    font-size: 0.75rem;
+    line-height: 16px;
+    font-family: var(--body-2-font); }
+
+.datatable > .content > table > tbody td > .detail > .content > .subtitle {
+    line-height: 14px;
+    font-size: 0.55rem; }
+
 .datatable > .content > table > thead > tr > th > i,
 .datatable > .content > table > tbody > tr > td > i {
     position: absolute;

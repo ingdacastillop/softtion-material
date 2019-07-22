@@ -5967,6 +5967,8 @@
                 ngListener: "&"
             },
             link: function ($scope) {
+                var listener = new Listener($scope, []); // Listener
+                
                 $scope.catalog = []; // Lista de items filtrados
                 
                 $scope.$watch(() => { return $scope.ngFilterParam; },
@@ -6071,15 +6073,23 @@
                     return start + " - " + end + " de " + count + " " + $scope.label;
                 };
                 
-                $scope.goFirstPage = function () { $scope.ngIndex = 0; };
+                $scope.goFirstPage = function () { 
+                    $scope.ngIndex = 0; listener.launch(Listeners.ACTION);
+                };
                 
-                $scope.prev = function () { $scope.ngIndex--; };
+                $scope.prev = function () { 
+                    $scope.ngIndex--; listener.launch(Listeners.ACTION);
+                };
                 
                 $scope.isFirstPage = function () { return ($scope.ngIndex === 0); };
                 
-                $scope.next = function () { $scope.ngIndex++; };
+                $scope.goLastPage = function () { 
+                    $scope.ngIndex = getMaxIndexPages(); listener.launch(Listeners.ACTION);
+                };
                 
-                $scope.goLastPage = function () { $scope.ngIndex = getMaxIndexPages(); };
+                $scope.next = function () { 
+                    $scope.ngIndex++; listener.launch(Listeners.ACTION);
+                };
                 
                 $scope.isLastPage = function () { 
                     return ($scope.ngIndex === getMaxIndexPages()); 
