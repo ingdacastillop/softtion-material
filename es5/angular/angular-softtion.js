@@ -20,7 +20,7 @@
     var ngSofttion = angular.module("ngSofttion", []);
 
     ngSofttion.service("$restful", restfulService).
-        service("$httpfile", $httpfileService).
+        service("$httpfile", httpfileService).
         service("$webService", webServiceService).
         directive("ngIterate", ngIterateDirective);
     
@@ -59,6 +59,7 @@
         { key: "catalog", value: catalog },
         { key: "record", value: record },
         { key: "store", value: store },
+        { key: "create", value: create },
         { key: "modify", value: modify },
         { key: "remove", value: remove },
         { key: "getResourceRoute", value: getResourceRoute }
@@ -127,6 +128,18 @@
 
         return self.$q(function (resolve, reject) {
             var URL = self.getResourceRoute(),
+                httpPost = self.$http.post,
+                promise = httpPost(URL, data, self.config);
+                
+            resolveRestful(self, promise, resolve, reject);
+        });
+    }
+
+    function create(ID, data) {
+        var self = this; // Instancia del objeto
+
+        return self.$q(function (resolve, reject) {
+            var URL = self.getResourceRoute(ID),
                 httpPost = self.$http.post,
                 promise = httpPost(URL, data, self.config);
                 
@@ -253,6 +266,7 @@
             { key: "catalog", value: catalog },
             { key: "record", value: record },
             { key: "store", value: store },
+            { key: "create", value: create },
             { key: "modify", value: modify },
             { key: "remove", value: remove },
             { key: "requiredPromise", value: requiredPromise }
@@ -282,6 +296,10 @@
 
         function store(params) {
             return resolvePromise(this, this.restful.store(params.data), params);
+        }
+
+        function create(ID, params) {
+            return resolvePromise(this, this.restful.create(ID, params.data), params);
         }
 
         function modify(ID, params) {
@@ -322,9 +340,9 @@
     
     // SERVICIO: $httpfile
     
-    $httpfileService.$inject = ["$q", "$http", "$timeout"];
+    httpfileService.$inject = ["$q", "$http", "$timeout"];
     
-    function $httpfileService($q, $http, $timeout) {
+    function httpfileService($q, $http, $timeout) {
         
         var ACTIONS = {
             DOWNLOAD: "DOWNLOAD",

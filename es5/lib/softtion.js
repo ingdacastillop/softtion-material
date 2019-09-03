@@ -363,18 +363,25 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
             return (result) ? { success: true } : { success: false, key: keyError };
         }
 
-        function forEach(array, fn) {
+        function forEach(array, fnEach, fnStop) {
             if (!this.isArray(array)) return false; // No es array
+            
+            var self = this, item, index; // Items del recorrido
 
             try {
-                array.forEach(function (value, index) {
-                    var stop = fn(value, index); // Verificando
+                array.forEach(function ($item, $index) {
+                    item = $item; index = $index; // Valores
+                    
+                    var stop = fnEach($item, $index);
 
-                    if (stop === true) throw Softtion.BreakException;
+                    if (stop === true) 
+                        throw Softtion.BreakException;
                 });
 
                 return true; // Array recorrido correctamente
             } catch (ex) {
+                if (self.isFunction(fnStop)) fnStop(item, index);
+                
                 return false; // Array no recorrido correctamente
             } 
         }

@@ -2948,6 +2948,13 @@ button.raised:focus:after, button.flat:focus:after {
     top: calc(50% - 12px);
     left: calc(50% - 12px); }
 
+.datatable > .content > table > thead > tr > th > .checkbox-readonly,
+.datatable > .content > table > tbody > tr > td > .checkbox-readonly {
+    position: absolute;
+    margin: 0px;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px); }
+
 .datatable > .content > table > thead > tr > th > .switch,
 .datatable > .content > table > tbody > tr > td > .switch {
     position: absolute;
